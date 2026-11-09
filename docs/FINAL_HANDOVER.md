@@ -39,6 +39,12 @@ Gemini narration can err; validated proposal records and schedule are authoritat
 
 Upstream non-blocking issues include large framework/editor chunks, conservative h3 icon-rule compilation, the optional capability probe 404 and occasional title-generation 502. The WSL Chromium network failures are documented; Firefox provides independent real browser evidence. Full physical-device/screen-reader certification is not claimed.
 
+## Future roadmap (not shipped)
+
+The next potential product phase is **Resend email invitations and volunteer confirmations**. After an organizer approves a replacement, a future version could email the volunteer a secure accept/decline link, record consent and delivery state, avoid duplicate sends, and reopen a gap if the volunteer declines. This would turn an approved *proposed staffing assignment* into a separately confirmed attendance response; the current MVP does **not** contact volunteers or verify their availability beyond organizer-entered information.
+
+Telegram is intentionally **not** in the first notification phase; only one channel is planned initially. Later options include WhatsApp/SMS alerts and escalation, then volunteer self-service, multi-organizer collaboration, advanced planning, and optional timesheets/payroll for paid teams. These are roadmap items only: **no API keys, notification services, databases, background jobs, or integrations have been implemented for them**. See the README's Future roadmap for detail.
+
 ## Recording and submission
 
 The exact timed 2–3 minute script and reset instructions are in [JUDGE_WALKTHROUGH.md](JUDGE_WALKTHROUGH.md). Before recording, sign in, reset your fictional event, and check that Gemini is available within the request budget. Record the actual app with Clips: full coverage, three cancellations, actual tool activity, inspect the pending repair, approve, refresh/history, make a manual change, and ask for a fresh coverage read.

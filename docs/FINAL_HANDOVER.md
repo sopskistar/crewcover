@@ -25,6 +25,10 @@ The final production Firefox suite passed all three cases in 1.0 minute. Axe fou
 
 The corrected canonical Node preview also passed real authentication and rendered the persisted Neon schedule. Use `pnpm build:node` and `NITRO_PORT=8091 pnpm start:local`. Vite hot reload is still unreliable in this WSL session; no further local-only debugging is required for the production release.
 
+## Git delivery
+
+Implementation commit [`1782149`](https://github.com/sopskistar/crewcover/commit/178214904a3f2451f8d598ce909d1b8da8288148) is pushed to the existing `main` branch. The GitHub Vercel deployment check succeeded. The original history and license are preserved; no secret or browser-session files are tracked. Subsequent handover-only commits do not change the tested application.
+
 ## Practical limits
 
 One private event per organizer; no shared organizer team or volunteer login. Existing assignments are preserved unless explicitly cancelled. Profile qualifications are organizer-maintained data. Ranking is reproducible rather than globally optimal. No drag-and-drop was added.

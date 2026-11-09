@@ -201,6 +201,30 @@ CrewCover is a hackathon MVP for **one private fictional event per organizer**. 
 
 Gemini can make explanatory mistakes; persisted proposals and deterministic validation remain authoritative. Provider quotas and inference budgets can temporarily interrupt chat, but Repair Center remains usable without AI. Automatic OpenRouter failover has not been verified.
 
+## Future roadmap — planned, not implemented
+
+CrewCover's first release focuses on reliable staffing recovery and human-approved scheduling. The capabilities below are **future plans only**; no notification delivery, volunteer acceptance workflow, payroll, or associated integrations are part of the currently verified application.
+
+### Phase 1 — Email invitations and volunteer confirmations (Resend)
+
+- Send transactional assignment and replacement invitations through **Resend** after an organizer approves a proposed change.
+- Allow invited volunteers to **accept or decline** using secure, time-limited links; only confirmed acceptance would be represented as such.
+- Give volunteers communication preferences and opt-in/opt-out controls; record consent and delivery/response status.
+- Track attempted sends and failures with appropriate retry, idempotency, and rate limits so a single assignment does not generate duplicate invitations.
+- On a decline, return the position to the organizer's attention and offer a freshly validated replacement recommendation.
+
+**Chosen first channel:** email via Resend. Telegram is **not** included in Phase 1; we are intentionally starting with one communication channel.
+
+### Phase 2 — Optional urgent communication channels
+
+After email confirmation works reliably, evaluate WhatsApp Business and SMS for time-critical alerts, along with configurable reminders and escalation rules. These would depend on user consent, provider costs, and delivery verification; they are not currently integrated.
+
+### Phase 3 — Extended workforce operations
+
+Evaluate volunteer self-service accounts, shared organizer workspaces, richer availability and staffing forecasts, and—if CrewCover expands to paid workers—timesheets and payroll/compensation integrations.
+
+**Current scope remains unchanged:** scheduling, agent-assisted repair, explicit organizer approval, and audit history. No Resend API key, Telegram bot, messaging queue, or payroll provider is required to run today's MVP.
+
 ## Deployment and further documentation
 
 The existing Vercel project and Neon integration are retained. Deploy using the **[official Agent-Native Vercel guide](https://www.agent-native.com/docs/vercel/)** and **[Neon guide](https://www.agent-native.com/docs/neon/)**; apply production migrations before deploying the built output.

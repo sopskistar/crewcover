@@ -1,0 +1,6 @@
+{
+  "origin": "Original CrewCover vector artwork rendered with Playwright",
+  "source": "public/og.svg",
+  "script": "scripts/export-brand.mjs",
+  "font": "Inter Variable, SIL OFL 1.1"
+}

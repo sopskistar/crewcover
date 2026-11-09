@@ -1,0 +1,1078 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T15:13:37.457832+00:00",
+  "title": "Design System: CrewCover",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Coordination Navy",
+        "canonical": "#172b36",
+        "tonalRamp": [
+          "oklch(0.150 0.0082 233.79)",
+          "oklch(0.270 0.0181 233.79)",
+          "oklch(0.390 0.0264 233.79)",
+          "oklch(0.510 0.0330 233.79)",
+          "oklch(0.630 0.0330 233.79)",
+          "oklch(0.750 0.0264 233.79)",
+          "oklch(0.860 0.0165 233.79)",
+          "oklch(0.950 0.0049 233.79)"
+        ]
+      },
+      "ink-soft": {
+        "role": "primary",
+        "displayName": "Soft Navy",
+        "canonical": "#314b57",
+        "tonalRamp": [
+          "oklch(0.150 0.0094 228.55)",
+          "oklch(0.270 0.0206 228.55)",
+          "oklch(0.390 0.0300 228.55)",
+          "oklch(0.510 0.0375 228.55)",
+          "oklch(0.630 0.0375 228.55)",
+          "oklch(0.750 0.0300 228.55)",
+          "oklch(0.860 0.0188 228.55)",
+          "oklch(0.950 0.0056 228.55)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Working Paper",
+        "canonical": "#f5f7f6",
+        "tonalRamp": [
+          "oklch(0.150 0.0006 165.08)",
+          "oklch(0.270 0.0014 165.08)",
+          "oklch(0.390 0.0020 165.08)",
+          "oklch(0.510 0.0025 165.08)",
+          "oklch(0.630 0.0025 165.08)",
+          "oklch(0.750 0.0020 165.08)",
+          "oklch(0.860 0.0012 165.08)",
+          "oklch(0.950 0.0004 165.08)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Record White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Reading Ink",
+        "canonical": "#20333b",
+        "tonalRamp": [
+          "oklch(0.150 0.0071 226.23)",
+          "oklch(0.270 0.0157 226.23)",
+          "oklch(0.390 0.0228 226.23)",
+          "oklch(0.510 0.0285 226.23)",
+          "oklch(0.630 0.0285 226.23)",
+          "oklch(0.750 0.0228 226.23)",
+          "oklch(0.860 0.0142 226.23)",
+          "oklch(0.950 0.0043 226.23)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "#5b6c72",
+        "tonalRamp": [
+          "oklch(0.150 0.0056 221.15)",
+          "oklch(0.270 0.0124 221.15)",
+          "oklch(0.390 0.0180 221.15)",
+          "oklch(0.510 0.0225 221.15)",
+          "oklch(0.630 0.0225 221.15)",
+          "oklch(0.750 0.0180 221.15)",
+          "oklch(0.860 0.0113 221.15)",
+          "oklch(0.950 0.0034 221.15)"
+        ]
+      },
+      "nav-text": {
+        "role": "neutral",
+        "displayName": "Navigation Text",
+        "canonical": "#c0d1d3",
+        "tonalRamp": [
+          "oklch(0.150 0.0047 205.30)",
+          "oklch(0.270 0.0102 205.30)",
+          "oklch(0.390 0.0149 205.30)",
+          "oklch(0.510 0.0186 205.30)",
+          "oklch(0.630 0.0186 205.30)",
+          "oklch(0.750 0.0149 205.30)",
+          "oklch(0.860 0.0093 205.30)",
+          "oklch(0.950 0.0028 205.30)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Quiet Line",
+        "canonical": "#dce4e0",
+        "tonalRamp": [
+          "oklch(0.150 0.0025 164.85)",
+          "oklch(0.270 0.0056 164.85)",
+          "oklch(0.390 0.0081 164.85)",
+          "oklch(0.510 0.0101 164.85)",
+          "oklch(0.630 0.0101 164.85)",
+          "oklch(0.750 0.0081 164.85)",
+          "oklch(0.860 0.0051 164.85)",
+          "oklch(0.950 0.0015 164.85)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Coverage Teal",
+        "canonical": "#17684f",
+        "tonalRamp": [
+          "oklch(0.150 0.0215 167.36)",
+          "oklch(0.270 0.0473 167.36)",
+          "oklch(0.390 0.0688 167.36)",
+          "oklch(0.510 0.0860 167.36)",
+          "oklch(0.630 0.0860 167.36)",
+          "oklch(0.750 0.0688 167.36)",
+          "oklch(0.860 0.0430 167.36)",
+          "oklch(0.950 0.0129 167.36)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Coverage Teal Hover",
+        "canonical": "#0f533e",
+        "tonalRamp": [
+          "oklch(0.150 0.0186 167.08)",
+          "oklch(0.270 0.0409 167.08)",
+          "oklch(0.390 0.0595 167.08)",
+          "oklch(0.510 0.0744 167.08)",
+          "oklch(0.630 0.0744 167.08)",
+          "oklch(0.750 0.0595 167.08)",
+          "oklch(0.860 0.0372 167.08)",
+          "oklch(0.950 0.0112 167.08)"
+        ]
+      },
+      "green-soft": {
+        "role": "primary",
+        "displayName": "Soft Coverage Teal",
+        "canonical": "#e5f3eb",
+        "tonalRamp": [
+          "oklch(0.150 0.0045 161.11)",
+          "oklch(0.270 0.0100 161.11)",
+          "oklch(0.390 0.0146 161.11)",
+          "oklch(0.510 0.0182 161.11)",
+          "oklch(0.630 0.0182 161.11)",
+          "oklch(0.750 0.0146 161.11)",
+          "oklch(0.860 0.0091 161.11)",
+          "oklch(0.950 0.0027 161.11)"
+        ]
+      },
+      "mint": {
+        "role": "primary",
+        "displayName": "Signal Mint",
+        "canonical": "#a4e7ce",
+        "tonalRamp": [
+          "oklch(0.150 0.0190 169.36)",
+          "oklch(0.270 0.0418 169.36)",
+          "oklch(0.390 0.0607 169.36)",
+          "oklch(0.510 0.0759 169.36)",
+          "oklch(0.630 0.0759 169.36)",
+          "oklch(0.750 0.0607 169.36)",
+          "oklch(0.860 0.0380 169.36)",
+          "oklch(0.950 0.0114 169.36)"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Vacancy Coral",
+        "canonical": "#a53d37",
+        "tonalRamp": [
+          "oklch(0.150 0.0347 26.54)",
+          "oklch(0.270 0.0763 26.54)",
+          "oklch(0.390 0.1110 26.54)",
+          "oklch(0.510 0.1388 26.54)",
+          "oklch(0.630 0.1388 26.54)",
+          "oklch(0.750 0.1110 26.54)",
+          "oklch(0.860 0.0694 26.54)",
+          "oklch(0.950 0.0208 26.54)"
+        ]
+      },
+      "red-soft": {
+        "role": "tertiary",
+        "displayName": "Soft Vacancy Coral",
+        "canonical": "#fff0ed",
+        "tonalRamp": [
+          "oklch(0.150 0.0042 31.08)",
+          "oklch(0.270 0.0092 31.08)",
+          "oklch(0.390 0.0134 31.08)",
+          "oklch(0.510 0.0168 31.08)",
+          "oklch(0.630 0.0168 31.08)",
+          "oklch(0.750 0.0134 31.08)",
+          "oklch(0.860 0.0084 31.08)",
+          "oklch(0.950 0.0025 31.08)"
+        ]
+      },
+      "red-line": {
+        "role": "tertiary",
+        "displayName": "Vacancy Outline",
+        "canonical": "#dca39c",
+        "tonalRamp": [
+          "oklch(0.150 0.0172 26.71)",
+          "oklch(0.270 0.0379 26.71)",
+          "oklch(0.390 0.0551 26.71)",
+          "oklch(0.510 0.0689 26.71)",
+          "oklch(0.630 0.0689 26.71)",
+          "oklch(0.750 0.0551 26.71)",
+          "oklch(0.860 0.0344 26.71)",
+          "oklch(0.950 0.0103 26.71)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Proposal Amber",
+        "canonical": "#855b14",
+        "tonalRamp": [
+          "oklch(0.150 0.0246 74.79)",
+          "oklch(0.270 0.0541 74.79)",
+          "oklch(0.390 0.0787 74.79)",
+          "oklch(0.510 0.0984 74.79)",
+          "oklch(0.630 0.0984 74.79)",
+          "oklch(0.750 0.0787 74.79)",
+          "oklch(0.860 0.0492 74.79)",
+          "oklch(0.950 0.0148 74.79)"
+        ]
+      },
+      "amber-soft": {
+        "role": "secondary",
+        "displayName": "Soft Proposal Amber",
+        "canonical": "#fff4d9",
+        "tonalRamp": [
+          "oklch(0.150 0.0093 88.46)",
+          "oklch(0.270 0.0205 88.46)",
+          "oklch(0.390 0.0298 88.46)",
+          "oklch(0.510 0.0372 88.46)",
+          "oklch(0.630 0.0372 88.46)",
+          "oklch(0.750 0.0298 88.46)",
+          "oklch(0.860 0.0186 88.46)",
+          "oklch(0.950 0.0056 88.46)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Keyboard Teal",
+        "canonical": "#16846d",
+        "tonalRamp": [
+          "oklch(0.150 0.0248 173.99)",
+          "oklch(0.270 0.0546 173.99)",
+          "oklch(0.390 0.0794 173.99)",
+          "oklch(0.510 0.0993 173.99)",
+          "oklch(0.630 0.0993 173.99)",
+          "oklch(0.750 0.0794 173.99)",
+          "oklch(0.860 0.0496 173.99)",
+          "oklch(0.950 0.0149 173.99)"
+        ]
+      },
+      "table-head": {
+        "role": "neutral",
+        "displayName": "Table Surface",
+        "canonical": "#edf2ef",
+        "tonalRamp": [
+          "oklch(0.150 0.0017 160.07)",
+          "oklch(0.270 0.0036 160.07)",
+          "oklch(0.390 0.0053 160.07)",
+          "oklch(0.510 0.0066 160.07)",
+          "oklch(0.630 0.0066 160.07)",
+          "oklch(0.750 0.0053 160.07)",
+          "oklch(0.860 0.0033 160.07)",
+          "oklch(0.950 0.0010 160.07)"
+        ]
+      },
+      "table-text": {
+        "role": "neutral",
+        "displayName": "Table Heading Text",
+        "canonical": "#52665b",
+        "tonalRamp": [
+          "oklch(0.150 0.0075 161.02)",
+          "oklch(0.270 0.0164 161.02)",
+          "oklch(0.390 0.0238 161.02)",
+          "oklch(0.510 0.0298 161.02)",
+          "oklch(0.630 0.0298 161.02)",
+          "oklch(0.750 0.0238 161.02)",
+          "oklch(0.860 0.0149 161.02)",
+          "oklch(0.950 0.0045 161.02)"
+        ]
+      },
+      "role-surface": {
+        "role": "neutral",
+        "displayName": "Role Surface",
+        "canonical": "#fbfcfb",
+        "tonalRamp": [
+          "oklch(0.150 0.0004 145.56)",
+          "oklch(0.270 0.0009 145.56)",
+          "oklch(0.390 0.0013 145.56)",
+          "oklch(0.510 0.0017 145.56)",
+          "oklch(0.630 0.0017 145.56)",
+          "oklch(0.750 0.0013 145.56)",
+          "oklch(0.860 0.0008 145.56)",
+          "oklch(0.950 0.0003 145.56)"
+        ]
+      },
+      "queue-text": {
+        "role": "neutral",
+        "displayName": "Queue Supporting Text",
+        "canonical": "#bfd0d4",
+        "tonalRamp": [
+          "oklch(0.150 0.0048 213.42)",
+          "oklch(0.270 0.0106 213.42)",
+          "oklch(0.390 0.0154 213.42)",
+          "oklch(0.510 0.0193 213.42)",
+          "oklch(0.630 0.0193 213.42)",
+          "oklch(0.750 0.0154 213.42)",
+          "oklch(0.860 0.0096 213.42)",
+          "oklch(0.950 0.0029 213.42)"
+        ]
+      },
+      "queue-line": {
+        "role": "neutral",
+        "displayName": "Queue Divider",
+        "canonical": "#354d58",
+        "tonalRamp": [
+          "oklch(0.150 0.0087 228.12)",
+          "oklch(0.270 0.0191 228.12)",
+          "oklch(0.390 0.0278 228.12)",
+          "oklch(0.510 0.0347 228.12)",
+          "oklch(0.630 0.0347 228.12)",
+          "oklch(0.750 0.0278 228.12)",
+          "oklch(0.860 0.0174 228.12)",
+          "oklch(0.950 0.0052 228.12)"
+        ]
+      },
+      "queue-link": {
+        "role": "neutral",
+        "displayName": "Queue Agent Link",
+        "canonical": "#d6e4e6",
+        "tonalRamp": [
+          "oklch(0.150 0.0038 207.10)",
+          "oklch(0.270 0.0084 207.10)",
+          "oklch(0.390 0.0122 207.10)",
+          "oklch(0.510 0.0152 207.10)",
+          "oklch(0.630 0.0152 207.10)",
+          "oklch(0.750 0.0122 207.10)",
+          "oklch(0.860 0.0076 207.10)",
+          "oklch(0.950 0.0023 207.10)"
+        ]
+      },
+      "avatar": {
+        "role": "neutral",
+        "displayName": "Profile Surface",
+        "canonical": "#edf1ec",
+        "tonalRamp": [
+          "oklch(0.150 0.0020 139.44)",
+          "oklch(0.270 0.0043 139.44)",
+          "oklch(0.390 0.0063 139.44)",
+          "oklch(0.510 0.0079 139.44)",
+          "oklch(0.630 0.0079 139.44)",
+          "oklch(0.750 0.0063 139.44)",
+          "oklch(0.860 0.0039 139.44)",
+          "oklch(0.950 0.0012 139.44)"
+        ]
+      },
+      "avatar-text": {
+        "role": "neutral",
+        "displayName": "Profile Initials",
+        "canonical": "#42624f",
+        "tonalRamp": [
+          "oklch(0.150 0.0122 157.80)",
+          "oklch(0.270 0.0268 157.80)",
+          "oklch(0.390 0.0389 157.80)",
+          "oklch(0.510 0.0486 157.80)",
+          "oklch(0.630 0.0486 157.80)",
+          "oklch(0.750 0.0389 157.80)",
+          "oklch(0.860 0.0243 157.80)",
+          "oklch(0.950 0.0073 157.80)"
+        ]
+      },
+      "toolkit-primary": {
+        "role": "neutral",
+        "displayName": "Toolkit Charcoal",
+        "canonical": "hsl(0 0% 15%)",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      },
+      "toolkit-foreground": {
+        "role": "neutral",
+        "displayName": "Toolkit Reading Text",
+        "canonical": "hsl(0 0% 10%)",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      },
+      "toolkit-border": {
+        "role": "neutral",
+        "displayName": "Toolkit Control Border",
+        "canonical": "hsl(0 0% 90%)",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      },
+      "toolkit-ring": {
+        "role": "neutral",
+        "displayName": "Toolkit Focus Ring",
+        "canonical": "hsl(0 0% 40%)",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      },
+      "toolkit-accent": {
+        "role": "neutral",
+        "displayName": "Toolkit Hover Surface",
+        "canonical": "hsl(0 0% 95%)",
+        "tonalRamp": [
+          "oklch(0.150 0.0000 0.00)",
+          "oklch(0.270 0.0000 0.00)",
+          "oklch(0.390 0.0000 0.00)",
+          "oklch(0.510 0.0000 0.00)",
+          "oklch(0.630 0.0000 0.00)",
+          "oklch(0.750 0.0000 0.00)",
+          "oklch(0.860 0.0000 0.00)",
+          "oklch(0.950 0.0000 0.00)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Coverage percentage, not a marketing headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Event name; 24px below the narrow container threshold."
+      },
+      "queue-title": {
+        "displayName": "Queue Title",
+        "purpose": "Repair queue heading; proposal heading uses 1.25 line-height."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Operations section heading; 16px on mobile viewport."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Workspace baseline and inherited control text."
+      },
+      "detail": {
+        "displayName": "Detail",
+        "purpose": "Metadata and explanatory record text; context-specific line-height overrides are preserved."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Operations view tabs."
+      }
+    },
+    "shadows": [
+      {
+        "name": "outline-control",
+        "value": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "purpose": "Inherited outline button shadow-xs.",
+        "source": "node_modules/@agent-native/toolkit/src/ui/button.tsx; node_modules/tailwindcss/theme.css --shadow-xs"
+      },
+      {
+        "name": "dialog",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Inherited portaled dialog shadow-lg.",
+        "source": "node_modules/@agent-native/toolkit/src/ui/dialog.tsx; node_modules/tailwindcss/theme.css --shadow-lg"
+      }
+    ],
+    "motion": [
+      {
+        "name": "coverage-state-duration",
+        "value": "180ms",
+        "purpose": "Segment and shift background changes.",
+        "source": "app/crewcover.css --cc-duration; .cc-position-track > span; .cc-shift"
+      },
+      {
+        "name": "coverage-state-easing",
+        "value": "ease",
+        "purpose": "Segment and shift background transitions use CSS ease, not the arrival easing.",
+        "source": "app/crewcover.css .cc-position-track > span; .cc-shift"
+      },
+      {
+        "name": "gap-arrival-easing",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Gap arrival only.",
+        "source": "app/crewcover.css --cc-ease"
+      },
+      {
+        "name": "gap-arrival-duration",
+        "value": "260ms",
+        "purpose": "Opacity .4 to 1; translateY(-3px) to zero.",
+        "source": "app/crewcover.css .cc-vacancy; @keyframes cc-gap-arrival"
+      },
+      {
+        "name": "shared-control-duration",
+        "value": "150ms",
+        "purpose": "Inherited Toolkit button state transitions.",
+        "source": "node_modules/@agent-native/toolkit/src/ui/button.tsx buttonVariants duration-150"
+      },
+      {
+        "name": "shared-control-easing",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Tailwind default timing for the shared control transition.",
+        "source": "node_modules/tailwindcss/theme.css --default-transition-timing-function"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "workspace-stack",
+        "value": "1000px",
+        "kind": "container-max",
+        "query": "@container (max-width:1000px)",
+        "source": "app/crewcover.css",
+        "mapping": "Single main column; two-column side stack; wrapped coverage and full-width action; stacked proposal summary."
+      },
+      {
+        "name": "workspace-narrow",
+        "value": "650px",
+        "kind": "container-max",
+        "query": "@container (max-width:650px)",
+        "source": "app/crewcover.css",
+        "mapping": "Single-column side stack; smaller title/coverage; wrapped filters; 44px vacancy/cancel targets."
+      },
+      {
+        "name": "operations-mobile",
+        "value": "767px",
+        "kind": "viewport-max",
+        "query": "@media (max-width: 767px)",
+        "source": "app/crewcover.css",
+        "mapping": "Mobile ledger with full-width role header and two shift cells; local time labels; stacked form pairs; reduced workspace padding."
+      },
+      {
+        "name": "toolkit-md",
+        "value": "768px",
+        "kind": "viewport-min",
+        "query": "@media (width >= 48rem)",
+        "source": "node_modules/@agent-native/toolkit/src/ui/input.tsx md:text-sm; node_modules/tailwindcss/theme.css --breakpoint-md",
+        "mapping": "Shared field text size utility; operations font:inherit overrides this property."
+      },
+      {
+        "name": "shared-chat-phone",
+        "value": "47.99rem",
+        "kind": "viewport-max",
+        "query": "@media (max-width: 47.99rem)",
+        "source": "app/global.css",
+        "mapping": "Shared shell hides the duplicate AgentKit header when the chat header is already in the app bar."
+      }
+    ],
+    "focus": {
+      "global": {
+        "css": "*:focus-visible { outline: 2px solid var(--cc-focus); outline-offset: 3px; }",
+        "source": "app/crewcover.css"
+      },
+      "sharedControls": {
+        "css": ".ds-shared-control:focus-visible { box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)); }",
+        "source": "node_modules/@agent-native/toolkit/src/ui/button.tsx; node_modules/@agent-native/toolkit/src/ui/input.tsx",
+        "note": "Equivalent expansion of ring-2 and ring-offset-2. The unlayered global outline remains in operations."
+      },
+      "returnFocus": {
+        "source": "app/components/operations/Operations.tsx useDialogFocusReturn",
+        "behavior": "Return to original control if connected, otherwise active operations view tab."
+      }
+    },
+    "motionSnippets": {
+      "arrival": {
+        "css": ".ds-gap { animation: ds-gap-arrival 260ms var(--cc-ease); } @keyframes ds-gap-arrival { from { opacity: .4; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }",
+        "source": "app/crewcover.css .cc-vacancy and @keyframes cc-gap-arrival"
+      },
+      "reducedMotion": {
+        "css": "@media (prefers-reduced-motion: reduce) { .ds-workspace *, .ds-workspace *::before, .ds-workspace *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }",
+        "source": "app/crewcover.css reduced-motion query",
+        "scope": "Operations workspace descendants; does not claim coverage of portaled Toolkit dialogs."
+      }
+    },
+    "sourceDependencies": [
+      {
+        "path": "PRODUCT.md",
+        "purpose": "Confirmed brand, language, and accessibility commitments."
+      },
+      {
+        "path": ".impeccable/surfaces/app-routes-operations-tsx.md",
+        "purpose": "Final Operate direction contract."
+      },
+      {
+        "path": "app/crewcover.css",
+        "purpose": "Normative CrewCover palette, type, dimensions, motion, and responsive rules."
+      },
+      {
+        "path": "app/global.css",
+        "purpose": "Font import, shared light/dark base variables, and body features."
+      },
+      {
+        "path": "app/root.tsx",
+        "purpose": "Stylesheet order and providers."
+      },
+      {
+        "path": "app/components/operations/Operations.tsx",
+        "purpose": "Used variants, component structure, status wording, and focus restoration."
+      },
+      {
+        "path": "app/components/CrewCoverMark.tsx",
+        "purpose": "Original SVG coordination mark."
+      },
+      {
+        "path": "app/components/ui/button.tsx",
+        "purpose": "Toolkit button reexport."
+      },
+      {
+        "path": "app/components/ui/input.tsx",
+        "purpose": "Toolkit field reexport."
+      },
+      {
+        "path": "app/components/ui/card.tsx",
+        "purpose": "Toolkit card reexport; operations record cards use local flat CSS instead."
+      },
+      {
+        "path": "app/components/ui/dialog.tsx",
+        "purpose": "Toolkit dialog reexport."
+      },
+      {
+        "path": "app/components/ui/toolkit-provider.tsx",
+        "purpose": "Shared Toolkit provider."
+      },
+      {
+        "path": "app/design-system.ts",
+        "purpose": "Empty defineDesignSystem({}); no custom ActionButton override."
+      },
+      {
+        "path": "node_modules/@agent-native/toolkit/src/ui/button.tsx",
+        "package": "@agent-native/toolkit@0.226.0",
+        "purpose": "Resolved variant, size, focus, disabled, and pressed styles."
+      },
+      {
+        "path": "node_modules/@agent-native/toolkit/src/ui/input.tsx",
+        "package": "@agent-native/toolkit@0.226.0",
+        "purpose": "Resolved field styles."
+      },
+      {
+        "path": "node_modules/@agent-native/toolkit/src/ui/dialog.tsx",
+        "package": "@agent-native/toolkit@0.226.0",
+        "purpose": "Overlay dimensions, elevation, and animation scope."
+      },
+      {
+        "path": "node_modules/@agent-native/toolkit/src/styles.css",
+        "package": "@agent-native/toolkit@0.226.0",
+        "purpose": "Shared CSS import and Tailwind source registration."
+      },
+      {
+        "path": "node_modules/@agent-native/toolkit/src/app/styles/agent-native.css",
+        "package": "@agent-native/toolkit@0.226.0",
+        "purpose": "HSL color mappings, radius mapping, shared motion scope."
+      },
+      {
+        "path": "node_modules/tailwindcss/theme.css",
+        "package": "tailwindcss@4.2.4",
+        "purpose": "Default shadow, timing, spacing, and md breakpoint resolution."
+      },
+      {
+        "path": "package.json",
+        "purpose": "Inter Variable font and framework/runtime dependency declarations."
+      },
+      {
+        "path": "node_modules/@tabler/icons-react/dist/esm/icons/IconSparkles.mjs",
+        "package": "@tabler/icons-react@3.44.0",
+        "purpose": "MIT-licensed sparkles path in the existing agent control; copied inline for the preview."
+      }
+    ],
+    "provenance": {
+      "mode": "source scan of the final shipped implementation; no browser or external activity",
+      "direction": "PRODUCT.md#brand-commitments; .impeccable/surfaces/app-routes-operations-tsx.md#direction-contract",
+      "stylesheetOrder": [
+        "app/global.css",
+        "app/crewcover.css"
+      ],
+      "orderSource": "app/root.tsx links export",
+      "colors": {
+        "ink": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-ink"
+        },
+        "ink-soft": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-ink-soft"
+        },
+        "paper": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-paper"
+        },
+        "white": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-white"
+        },
+        "text": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-text"
+        },
+        "muted": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-muted"
+        },
+        "nav-text": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-nav-text"
+        },
+        "line": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-line"
+        },
+        "green": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-green"
+        },
+        "green-hover": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-green-hover"
+        },
+        "green-soft": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-green-soft"
+        },
+        "mint": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-mint"
+        },
+        "red": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-red"
+        },
+        "red-soft": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-red-soft"
+        },
+        "red-line": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-red-line"
+        },
+        "amber": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-amber"
+        },
+        "amber-soft": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-amber-soft"
+        },
+        "focus": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-focus"
+        },
+        "table-head": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-table-head"
+        },
+        "table-text": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-table-text"
+        },
+        "role-surface": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-role-surface"
+        },
+        "queue-text": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-queue-text"
+        },
+        "queue-line": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-queue-line"
+        },
+        "queue-link": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-queue-link"
+        },
+        "avatar": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-avatar"
+        },
+        "avatar-text": {
+          "file": "app/crewcover.css",
+          "selector": ":root",
+          "property": "--cc-avatar-text"
+        },
+        "toolkit-primary": {
+          "file": "app/global.css",
+          "selector": ":root",
+          "property": "--primary"
+        },
+        "toolkit-foreground": {
+          "file": "app/global.css",
+          "selector": ":root",
+          "property": "--foreground"
+        },
+        "toolkit-border": {
+          "file": "app/global.css",
+          "selector": ":root",
+          "property": "--border and --input"
+        },
+        "toolkit-ring": {
+          "file": "app/global.css",
+          "selector": ":root",
+          "property": "--ring"
+        },
+        "toolkit-accent": {
+          "file": "app/global.css",
+          "selector": ":root",
+          "property": "--accent"
+        }
+      },
+      "typography": {
+        "display": "app/crewcover.css .cc-coverage-number > strong",
+        "headline": "app/crewcover.css .cc-title-line h1; .cc-workspace heading rules",
+        "queue-title": "app/crewcover.css .cc-repair-queue h2",
+        "title": "app/crewcover.css .cc-section-heading h2; .cc-workspace heading rules",
+        "body": "app/crewcover.css .cc-workspace; .cc-workspace button/input/select font: inherit",
+        "detail": "app/crewcover.css .cc-event-details",
+        "label": "app/crewcover.css .cc-tabs > button",
+        "font": "app/crewcover.css :root --cc-font; app/global.css @fontsource-variable/inter and body feature settings"
+      },
+      "rounded": {
+        "surface": "app/crewcover.css --cc-radius",
+        "inset": "app/crewcover.css .cc-guide, .cc-unresolved, .cc-volunteer-form fieldset",
+        "control": "app/global.css --radius=0.5rem; node_modules/@agent-native/toolkit/src/app/styles/agent-native.css @theme inline --radius-md: calc(var(--radius) - 2px)",
+        "status": "app/crewcover.css .cc-status and .cc-demo-label",
+        "utility": "app/crewcover.css .cc-text-button, .cc-vacancy and .cc-skill-list > span"
+      },
+      "spacing": {
+        "inline": "app/crewcover.css .cc-header-actions and .cc-shift gap",
+        "control": "app/crewcover.css .cc-shift padding, .cc-candidate-list gap contexts",
+        "inset": "app/crewcover.css .cc-recommendations gap, .cc-unresolved padding",
+        "section": "app/crewcover.css .cc-recommendation padding; .cc-recommendations and summary rhythm",
+        "panel": "app/crewcover.css .cc-tabs gap; .cc-coverage block padding",
+        "workspace": "app/crewcover.css .cc-workspace inline padding"
+      },
+      "components": {
+        "button-primary": [
+          "app/crewcover.css .cc-workspace .cc-primary",
+          "node_modules/@agent-native/toolkit/src/ui/button.tsx buttonVariants"
+        ],
+        "button-agent": [
+          "app/crewcover.css .cc-workspace .cc-agent-button",
+          "node_modules/@agent-native/toolkit/src/ui/button.tsx buttonVariants"
+        ],
+        "button-default": [
+          "app/global.css :root --primary",
+          "node_modules/@agent-native/toolkit/src/ui/button.tsx buttonVariants"
+        ],
+        "button-outline": [
+          "node_modules/@agent-native/toolkit/src/ui/button.tsx variant outline",
+          "app/global.css :root --background/--border/--accent"
+        ],
+        "button-queue": [
+          "app/crewcover.css .cc-repair-queue > button:not(.cc-queue-agent); unlayered background overrides layered Toolkit hover",
+          "node_modules/@agent-native/toolkit/src/ui/button.tsx default size and interaction rules"
+        ],
+        "input-search": [
+          "app/crewcover.css .cc-search",
+          "node_modules/@agent-native/toolkit/src/ui/input.tsx"
+        ],
+        "navigation-tab": [
+          "app/crewcover.css .cc-tabs and .cc-tabs > button"
+        ],
+        "chip-pending": [
+          "app/crewcover.css .cc-status and .cc-status.pending"
+        ],
+        "card-recommendation": [
+          "app/crewcover.css .cc-recommendation and .cc-recommendation-main"
+        ],
+        "vacancy-action": [
+          "app/crewcover.css .cc-vacancy and @keyframes cc-gap-arrival"
+        ]
+      },
+      "ramps": {
+        "status": "generated preview metadata, not shipped tokens",
+        "method": "Source color converted from sRGB to OKLCH; eight ascending lightness steps 0.15–0.95, same hue, chroma tapered toward endpoints. Canonical source value is unchanged."
+      },
+      "snippetTranslation": "Tailwind utilities expanded to CSS. Root custom properties remain live-bound with var(). Example structure and prefixed classes replace React only; no framework runtime, icon package, or Tailwind bundle is required."
+    },
+    "notCanonized": [
+      {
+        "finding": "10px utility metadata and 8–9px avatar initials are shipped density exceptions.",
+        "reason": "They do not establish the default scale for future body text."
+      },
+      {
+        "finding": "Workspace reduced-motion overrides do not select portaled dialog content; buttons retain an immediate 1px pressed displacement.",
+        "reason": "Documentation records observed scope and does not invent universal motion suppression or change shared behavior."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Coverage primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shipped operations control; shared default size and CrewCover appearance.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Find a repair<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px 12px;border:0 solid transparent;border-radius:calc(var(--radius) - 2px);background:var(--cc-green);color:var(--cc-white);font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;white-space:nowrap;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 150ms cubic-bezier(.4,0,.2,1),scale 150ms cubic-bezier(.4,0,.2,1);}.ds-button-primary:hover{background:var(--cc-green-hover);}.ds-button-primary:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-button-primary:active:not(:disabled){transform:translateY(1px);scale:.98;}.ds-button-primary:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none;animation:none;}.ds-button-primary:active:not(:disabled){scale:1;}}"
+    },
+    {
+      "name": "Agent entry button",
+      "kind": "button",
+      "refersTo": "button-agent",
+      "description": "Shipped operations control; shared default size and CrewCover appearance.",
+      "html": "<button class=\"ds-button-agent\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6\"/></svg>Ask agent</button>",
+      "css": ".ds-button-agent{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px 12px;border:0 solid transparent;border-radius:calc(var(--radius) - 2px);background:var(--cc-ink);color:var(--cc-white);font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;white-space:nowrap;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 150ms cubic-bezier(.4,0,.2,1),scale 150ms cubic-bezier(.4,0,.2,1);}.ds-button-agent:hover{background:var(--cc-ink-soft);}.ds-button-agent:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-button-agent:active:not(:disabled){transform:translateY(1px);scale:.98;}.ds-button-agent:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-button-agent{transition:none;animation:none;}.ds-button-agent:active:not(:disabled){scale:1;}}"
+    },
+    {
+      "name": "Shared default button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Shipped operations control; shared default size and CrewCover appearance.",
+      "html": "<button class=\"ds-button-default\" type=\"button\">Generate repair proposal<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-button-default{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px 12px;border:0 solid transparent;border-radius:calc(var(--radius) - 2px);background:hsl(var(--primary));color:hsl(var(--primary-foreground));font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;white-space:nowrap;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 150ms cubic-bezier(.4,0,.2,1),scale 150ms cubic-bezier(.4,0,.2,1);}.ds-button-default:hover{background:color-mix(in oklab,hsl(var(--primary)) 90%,transparent);}.ds-button-default:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-button-default:active:not(:disabled){transform:translateY(1px);scale:.98;}.ds-button-default:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-button-default{transition:none;animation:none;}.ds-button-default:active:not(:disabled){scale:1;}}"
+    },
+    {
+      "name": "Shared outline button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Shipped operations control; shared default size and CrewCover appearance.",
+      "html": "<button class=\"ds-button-outline\" type=\"button\">Reject proposal</button>",
+      "css": ".ds-button-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px 16px;border:0 solid transparent;border-radius:calc(var(--radius) - 2px);background:hsl(var(--background));color:var(--cc-text);font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;white-space:nowrap;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 150ms cubic-bezier(.4,0,.2,1),scale 150ms cubic-bezier(.4,0,.2,1);border-width:1px;border-color:hsl(var(--border));box-shadow:0 1px 2px 0 rgb(0 0 0 / .05);}.ds-button-outline:hover{background:hsl(var(--accent));color:hsl(var(--accent-foreground));}.ds-button-outline:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-button-outline:active:not(:disabled){transform:translateY(1px);scale:.98;}.ds-button-outline:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none;animation:none;}.ds-button-outline:active:not(:disabled){scale:1;}}"
+    },
+    {
+      "name": "Repair queue button",
+      "kind": "button",
+      "refersTo": "button-queue",
+      "description": "Mint CTA on the navy repair queue; unlayered CrewCover background overrides the shared hover utility.",
+      "html": "<div class=\"ds-queue-canvas\"><button class=\"ds-button-queue\" type=\"button\">Find qualified replacements<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></div>",
+      "css": ".ds-button-queue{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:8px 12px;border:0 solid transparent;border-radius:calc(var(--radius) - 2px);background:var(--cc-mint);color:var(--cc-ink);font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;white-space:nowrap;cursor:pointer;transition:color 150ms cubic-bezier(.4,0,.2,1),background-color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 150ms cubic-bezier(.4,0,.2,1),scale 150ms cubic-bezier(.4,0,.2,1);width:100%;min-height:38px;font-size:11px;white-space:normal;}.ds-button-queue:hover{background:var(--cc-mint);}.ds-button-queue:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-button-queue:active:not(:disabled){transform:translateY(1px);scale:.98;}.ds-button-queue:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-button-queue{transition:none;animation:none;}.ds-button-queue:active:not(:disabled){scale:1;}}.ds-queue-canvas{background:var(--cc-ink);padding:22px;border-radius:var(--cc-radius);}"
+    },
+    {
+      "name": "Volunteer search",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "A named shared input with the operations search inset.",
+      "html": "<label class=\"ds-search\"><svg class=\"ds-search-icon\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"m15 15 6 6\"/></svg><input class=\"ds-search-field\" aria-label=\"Search volunteers\" placeholder=\"Search your crew…\" /></label>",
+      "css": ".ds-search{position:relative;display:flex;align-items:center;width:100%;max-width:300px;}.ds-search-icon{position:absolute;left:12px;color:var(--cc-muted);}.ds-search-field{width:100%;height:36px;border:1px solid hsl(var(--input));border-radius:calc(var(--radius) - 2px);background:var(--cc-white);color:var(--cc-text);padding:4px 12px 4px 36px;caret-color:var(--cc-green);font-family:var(--cc-font);font-size:14px;font-weight:400;line-height:1.5;}.ds-search-field::placeholder{color:hsl(var(--muted-foreground));}.ds-search-field:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring));}.ds-search-field:disabled{cursor:not-allowed;opacity:.5;}.ds-search-field[aria-invalid=\"true\"]{border-color:hsl(var(--destructive));}"
+    },
+    {
+      "name": "Operations view tabs",
+      "kind": "nav",
+      "refersTo": "navigation-tab",
+      "description": "Sentence-case, scrollable navigation with an explicit active view.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Event views\"><button class=\"ds-tab\" type=\"button\" aria-current=\"page\">Overview</button><button class=\"ds-tab\" type=\"button\">Schedule</button><button class=\"ds-tab\" type=\"button\">Repair Center</button></nav>",
+      "css": ".ds-tabs{display:flex;gap:24px;border-bottom:1px solid var(--cc-line);overflow-x:auto;scrollbar-width:thin;}.ds-tab{display:flex;align-items:center;gap:8px;min-height:46px;padding:0 0 13px;border:0;border-bottom:2px solid transparent;background:none;color:var(--cc-muted);font-family:var(--cc-font);font-size:13px;font-weight:500;line-height:1.5;white-space:nowrap;cursor:pointer;}.ds-tab:hover{color:var(--cc-ink);}.ds-tab[aria-current=\"page\"]{color:var(--cc-green);border-bottom-color:var(--cc-green);}.ds-tab:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;}.ds-tab:active{transform:translateY(1px);}"
+    },
+    {
+      "name": "Pending proposal chip",
+      "kind": "chip",
+      "refersTo": "chip-pending",
+      "description": "A noninteractive pending state, always named in text.",
+      "html": "<span class=\"ds-pending\">Awaiting your approval</span>",
+      "css": ".ds-pending{display:inline-flex;align-items:center;padding:3px 7px;border-radius:5px;background:var(--cc-amber-soft);color:var(--cc-amber);font-family:var(--cc-font);font-size:11px;font-weight:500;line-height:1.5;white-space:nowrap;}"
+    },
+    {
+      "name": "Recommendation record",
+      "kind": "card",
+      "refersTo": "card-recommendation",
+      "description": "Flat white record surface used for a proposed replacement. Example text is explicitly illustrative.",
+      "html": "<article class=\"ds-recommendation\"><h4 class=\"ds-recommendation-name\">Example volunteer</h4><p class=\"ds-recommendation-detail\">Example role, 09:00 to 12:00</p><span class=\"ds-recommendation-status\">Proposed</span></article>",
+      "css": ".ds-recommendation{padding:20px;background:var(--cc-white);color:var(--cc-text);border:1px solid var(--cc-line);border-radius:var(--cc-radius);font-family:var(--cc-font);line-height:1.5;}.ds-recommendation-name{font-size:14px;font-weight:600;line-height:1.25;margin:0 0 4px;}.ds-recommendation-detail{font-size:11px;color:var(--cc-muted);margin:0;}.ds-recommendation-status{display:inline-flex;align-items:center;padding:3px 7px;border-radius:5px;font-size:11px;font-weight:500;background:var(--cc-amber-soft);color:var(--cc-amber);}"
+    },
+    {
+      "name": "Ledger vacancy action",
+      "kind": "custom",
+      "refersTo": "vacancy-action",
+      "description": "The gap action arrives briefly, remains named, and has a reduced-motion override.",
+      "html": "<div class=\"ds-gap-cell\"><button class=\"ds-vacancy\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg>1 uncovered<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></div>",
+      "css": ".ds-gap-cell{padding:12px;background:var(--cc-red-soft);container-type:inline-size;}.ds-vacancy{display:flex;align-items:center;justify-content:flex-start;gap:5px;min-height:28px;width:100%;padding:0 3px;border:0;border-radius:4px;background:none;color:var(--cc-red);font-family:var(--cc-font);font-size:11px;font-weight:500;line-height:1.5;cursor:pointer;animation:ds-gap-arrival 260ms var(--cc-ease);}.ds-vacancy>svg:last-child{margin-left:auto;}.ds-vacancy:hover{background:var(--cc-red-hover);}.ds-vacancy:focus-visible{outline:2px solid var(--cc-focus);outline-offset:3px;}.ds-vacancy:active{transform:translateY(1px);}@keyframes ds-gap-arrival{from{opacity:.4;transform:translateY(-3px);}to{opacity:1;transform:translateY(0);}}@media(prefers-reduced-motion:reduce){.ds-vacancy{animation:none;transition:none;}}@container(max-width:650px){.ds-vacancy{min-height:44px;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operations Call Sheet",
+    "overview": "The operations call sheet pairs navy working chrome with light, readable records. Compact Inter typography and aligned staffing rows keep people, roles, times, and next actions legible in a busy event venue.\n\nTeal communicates healthy coverage and forward actions, amber identifies proposals awaiting approval, and coral identifies gaps. Motion acknowledges a state change; it does not delay reading the resulting schedule. The existing shared navigation and agent surfaces remain part of the system.",
+    "keyCharacteristics": [
+      "Navy structure and light working surfaces.",
+      "Compact, aligned records with readable headings and tabular numerals.",
+      "Status colors accompanied by labels, counts, or icons.",
+      "Flat containers, restrained borders, and purposeful feedback."
+    ],
+    "rules": [
+      {
+        "name": "The Status Has Words Rule",
+        "body": "Coverage and proposal state must remain understandable through visible text, counts, or icons alongside color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat Working Surface Rule",
+        "body": "Working records use tonal surfaces and thin borders; inherited control and dialog shadows do not turn every container into a floating card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the existing navy, paper, white, and semantic status tokens.",
+      "Do pair status colors with words, counts, or icons.",
+      "Do preserve compact alignment, tabular numerals, visible keyboard focus, and event-local time labels.",
+      "Do retain immediate feedback when reduced motion removes transitions and arrival animation.",
+      "Do keep proposals visibly pending until organizer approval."
+    ],
+    "donts": [
+      "Don't introduce gradients, stock illustration, decorative metrics, or a competing visual world.",
+      "Don't use color alone to communicate a gap, a healthy state, or a pending proposal.",
+      "Don't generalize tiny utility metadata or avatar initials into the body-text scale.",
+      "Don't assume the workspace reduced-motion selector covers portaled shared components."
+    ]
+  }
+}

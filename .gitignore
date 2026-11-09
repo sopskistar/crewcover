@@ -58,3 +58,9 @@ data/*.lock
 # Local QA artifacts
 playwright-report/
 test-results/
+.vercel
+.env*
+
+# Safe environment templates must remain versioned
+!.env.example
+!.env.sample

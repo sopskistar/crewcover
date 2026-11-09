@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-09T21:06:36.541Z",
+        "reason": "Project design and finish review: DESIGN.md declares Inter as normative typography for the compact staffing ledger; preserve that intentional released system."
+      }
+    ]
+  }
+}

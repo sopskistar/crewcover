@@ -19,7 +19,7 @@ If a candidate is ineligible or inference is unavailable, show the real error ho
 
 ## Public Clips link
 
-Recording URL: **to be supplied by the owner after recording in Clips**.
+Submitted public recording: **[CrewCover — Clips walkthrough](https://clips.agent-native.com/share/r8pwtSENpdWH)**. The existing video was recorded without spoken narration because the microphone input was silent; use this walkthrough as its written explanation. The owner has confirmed the official submission form displayed a receipt confirmation.
 
 - Record the actual deployed app using Clips; no separately generated cinematic video is required.
 - Set the recording's share link to public.

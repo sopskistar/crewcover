@@ -67,10 +67,18 @@ The owner supplies the Clips recording and official submission-form URL. Neither
 
 ## Enhancement release validation
 
-Final enhanced production deployment: `dpl_BHbNvuXJwnECdDQmLLnZBPhP3ugv`, using the existing project and URL. TypeScript, Doctor, 21 domain/database tests and the official Vercel production build pass. All seven production Firefox cases pass in 3.2 minutes, including lower-row dragging with the agent panel open, invalid drops, explicit confirmation, persistence, focus return, emulated touch taps and responsive tab resizing. Security smoke rejects anonymous actions/chat (401), verifies protected operations/health (200), and confirms Neon application/auth schemas.
+Verified prebuilt enhancement deployment: `dpl_BHbNvuXJwnECdDQmLLnZBPhP3ugv`, using the existing project and URL. The subsequent Git-delivered release is recorded below. TypeScript, Doctor, 21 domain/database tests and the official Vercel production build pass. All seven production Firefox cases pass in 3.2 minutes, including lower-row dragging with the agent panel open, invalid drops, explicit confirmation, persistence, focus return, emulated touch taps and responsive tab resizing. Security smoke rejects anonymous actions/chat (401), verifies protected operations/health (200), and confirms Neon application/auth schemas.
 
 The real Gemini proof passed as one complete run at revision 250 after a human-approved manual drag assignment. Coverage was 85% while the repair was pending and 100% after approval; the fresh tool read confirms saved 100% coverage. Sanitized proof, session-isolation results, accessibility and measured feedback contrast are in docs/evidence. Raw credentials, sessions, browser traces and provider data remain ignored and restricted.
 
 Physical-device swipes, complete screen-reader certification and automatic OpenRouter fallback remain unverified. The manual picker is the tested phone alternative. Atomic transfers between already-staffed shifts and elaborate decorative effects were skipped; dragging never represents a cancellation. No Remotion or separate generated video was created.
 
 The release is ready for the owner's genuine public Clips recording. Follow JUDGE_WALKTHROUGH.md, reset only your fictional event, record the real workflow, test the public share link signed out, then add that URL and submit. The recording and submission remain owner actions; no URL or submitted entry is fabricated.
+
+## Git-delivered release and post-push verification
+
+Release source commit [`664f1ac`](https://github.com/sopskistar/crewcover/commit/664f1ac04b335344fc206e3222873cac53c960fe) is pushed to `main`, directly above the preserved roadmap commit `2c16bcc`. The recovery tag is also pushed. GitHub's Vercel check succeeded and the production alias was verified on deployment `dpl_rs9EZHfZ18z1SUPrwCkkGQcAyvPo`.
+
+At 03:36 UTC on November 10, the post-push Firefox/read-only check verified the public introduction (200), phone layout, authenticated workspace, drag controls, and Sofia's saved Guest assistance assignment. A fresh protected action read returned 100% coverage at revision250; Neon and both application/authentication schemas were healthy. No AI request was made. The sanitized receipt is [release-verification.json](evidence/release-verification.json). Later receipt-only documentation commits do not change the tested application.
+
+The owner still records the public Clips demonstration, tests its share link signed out, adds the URL, and submits by **November 10, 2026, 08:59 WAT**. Resend and volunteer response flows remain explicitly future functionality.

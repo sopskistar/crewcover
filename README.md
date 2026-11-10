@@ -6,11 +6,11 @@ CrewCover is an **agent-native emergency staffing recovery workspace** for event
 
 Built with **[Builder.io Agent-Native](https://www.agent-native.com/)** for the **Builder.io Agent-Native Hackathon 2026**.
 
-**[Explore CrewCover](https://crewcover-iota.vercel.app)** · **[Judge walkthrough](docs/JUDGE_WALKTHROUGH.md)** · **[Architecture](docs/ARCHITECTURE.md)** · **[Verified tests](docs/TESTING.md)**
+**[Live application](https://crewcover-iota.vercel.app)** · **[Watch the public Clips demo](https://clips.agent-native.com/share/r8pwtSENpdWH)** · **[Judge walkthrough](docs/JUDGE_WALKTHROUGH.md)** · **[Architecture](docs/ARCHITECTURE.md)** · **[Verified tests](docs/TESTING.md)**
 
 > **Demo access:** The public introduction explains the workflow with a labeled fictional preview. Choose **Get started**, create an account or sign in, then choose **Open demo conference** in your private workspace. The conference, volunteers, and scenario are fictional; the scheduling operations and database changes are real.
 >
-> **Clips demonstration:** A public recording link will be added once it has been recorded and verified.
+> **Hackathon submission:** CrewCover was submitted to the Builder.io Agent-Native Hackathon and the submission page confirmed receipt. The [public Clips walkthrough](https://clips.agent-native.com/share/r8pwtSENpdWH) demonstrates the staffing recovery workflow and human-reviewed repairs, including visual vacancy assignment. The recording has no spoken narration; the sections below and the [judge walkthrough](docs/JUDGE_WALKTHROUGH.md) explain the sequence.
 
 ## The problem: a schedule can break in minutes
 
@@ -202,7 +202,13 @@ The exact test scope, evidence, environment limitations, and security checks are
 
 CrewCover is a hackathon MVP for **one private fictional event per organizer**. It does not yet provide team-wide organizer accounts, volunteer logins, availability confirmations, outbound messaging, or payroll. The verified release includes reviewed vacancy-only drag-and-drop and accessible manual controls. It does not transfer staffed assignments; a real cancellation records unavailability during that shift. Repair ranking is reproducible rather than globally optimized, and organizer-entered qualifications are not externally certified.
 
-Gemini can make explanatory mistakes; persisted proposals and deterministic validation remain authoritative. Provider quotas and inference budgets can temporarily interrupt chat, but Repair Center remains usable without AI. Automatic OpenRouter failover has not been verified.
+Gemini can make explanatory mistakes; persisted proposals and deterministic validation remain authoritative. Provider quotas and inference budgets can temporarily interrupt chat, but Repair Center remains usable without AI. Automatic OpenRouter failover is not implemented.
+
+### AI provider selection and troubleshooting
+
+The Agent-Native deployment default is **Google Gemini 3.1 Flash-Lite** (`ai-sdk:google`) using a server-side Google API key. A model selected in an existing chat can override that default. To use the configured Google provider, open the chat model picker and choose **Gemini → Gemini 3.1 Flash-Lite**.
+
+During post-submission investigation on November 10, 2026, Codex verified that a direct Gemini production request invoked the real `get-event-coverage` Agent-Native action and returned **100% coverage at revision 250**, matching persisted Neon data. No application change or redeployment was required. Separately, requests explicitly routed to **OpenRouter** produced an **HTTP 402 insufficient-credits** response which Agent-Native Toolkit 0.226.0 displayed as a Builder credits warning. OpenRouter is a **manually selected** alternative requiring its own available credits; configuring a Google key does not redirect an OpenRouter-selected chat to Google. Temporary provider HTTP 503 high-demand responses are a separate issue. CrewCover's own per-user inference budget is distinct from both provider limits.
 
 ## Future roadmap — planned, not implemented
 

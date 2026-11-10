@@ -152,3 +152,52 @@ describe("deterministic scheduling", () => {
     expect(p.status).toBe("pending");
   });
 });
+
+describe("drag vacancy preview and server assignment agreement", () => {
+  it("rejects full, cancelled, unqualified, unavailable, overlapping and over-limit drops without mutations", async () => {
+    const { assignmentIssues } = await import("./scheduling");
+    const s = createDemo(owner);
+    expect(assignmentIssues(s, "s-1", "v-15").join()).toContain(
+      "fully covered",
+    );
+    cancelAssignment(s, "a-1", "Test", owner);
+    const before = structuredClone(s);
+    for (const [id, reason] of [
+      ["v-1", "cancelled"],
+      ["v-2", "Missing Registration"],
+      ["v-6", "Overlapping assignment"],
+      ["v-18", "Not available"],
+    ] as const) {
+      expect(assignmentIssues(s, "s-1", id).join()).toContain(reason);
+      expect(() => assignVolunteer(s, "s-1", id, owner)).toThrow();
+      expect(s).toEqual(before);
+    }
+    s.volunteers.find((v) => v.id === "v-15")!.maxHours = 4;
+    expect(assignmentIssues(s, "s-1", "v-15")).toContain(
+      "Would exceed working-hour limit",
+    );
+    expect(() => assignVolunteer(s, "s-1", "v-15", owner)).toThrow(
+      "working-hour",
+    );
+  });
+  it("fills only the vacancy and preserves cancellations and all prior active assignments", async () => {
+    const { assignmentIssues } = await import("./scheduling");
+    const s = createDemo(owner);
+    cancelAssignment(s, "a-1", "Test", owner);
+    const prior = s.assignments
+      .filter((a) => a.status === "active")
+      .map((a) => a.id);
+    expect(assignmentIssues(s, "s-1", "v-15")).toEqual([]);
+    assignVolunteer(s, "s-1", "v-15", owner);
+    expect(coverage(s).percentage).toBe(100);
+    expect(s.cancellations).toHaveLength(1);
+    expect(
+      s.assignments
+        .filter((a) => prior.includes(a.id))
+        .every((a) => a.status === "active"),
+    ).toBe(true);
+    expect(() => assignVolunteer(s, "s-1", "v-15", owner)).toThrow(
+      "fully covered",
+    );
+  });
+});

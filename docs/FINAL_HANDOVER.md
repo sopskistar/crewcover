@@ -17,23 +17,23 @@ The existing Vercel project and Neon integration are preserved. No replacement p
 
 ## Verified evidence
 
-Eighteen unit/database tests pass. TypeScript, Agent-Native doctor and the official Node24/Nitro/Vercel production build pass. Production GET health confirms both application and authentication schemas. The cancellation-to-approval flow and manual assignment have been exercised against Neon.
+Twenty-one unit/database tests pass. TypeScript, Agent-Native doctor and the official Node24/Nitro/Vercel production build pass. Production GET health confirms both application and authentication schemas. The cancellation-to-approval flow and manual assignment have been exercised against Neon.
 
-The real Gemini proof captured coverage and proposal actions at 85% pending coverage, UI approval to 100%, manual replacement, and a new coverage action returning 100% at revision 94. The final deployed workflow passed in one complete run after evidence-script corrections; no mocked inference or fabricated response is counted.
+The real Gemini proof captured coverage and proposal actions at 85% pending coverage, UI approval to 100%, manual replacement, and a new coverage action returning 100% at revision 250. The final deployed workflow passed in one complete run after evidence-script corrections; no mocked inference or fabricated response is counted.
 
-The final production Firefox suite passed all three cases in 1.0 minute. Axe found zero violations across all five views and the agent panel. All eleven final captures were reviewed; the four prior material design fixes are resolved. The credential scan found zero matches across Git candidates and public assets. Release source and sanitized verification evidence are delivered on the existing main branch; the exact commit is recorded in Git history.
+The final production Firefox suite passed all seven cases in 3.2 minutes. Axe found zero violations across all five views and the agent panel. Desktop, tablet and phone captures were reviewed; the three enhancement navigation findings were independently scored resolved. Nineteen audited view/state combinations had zero Axe violations, and the actual success toast measured 5.86:1 contrast. The credential scan found zero matches across Git candidates and public assets. Release source and sanitized verification evidence are delivered on the existing main branch; the exact commit is recorded in Git history.
 
 The corrected canonical Node preview also passed real authentication and rendered the persisted Neon schedule. Use `pnpm build:node` and `NITRO_PORT=8091 pnpm start:local`. Vite hot reload is still unreliable in this WSL session; no further local-only debugging is required for the production release.
 
 ## Git delivery
 
-Implementation commit [`1782149`](https://github.com/sopskistar/crewcover/commit/178214904a3f2451f8d598ce909d1b8da8288148) is pushed to the existing `main` branch. The GitHub Vercel deployment check succeeded. The original history and license are preserved; no secret or browser-session files are tracked. Subsequent handover-only commits do not change the tested application.
+The original implementation commit [`1782149`](https://github.com/sopskistar/crewcover/commit/178214904a3f2451f8d598ce909d1b8da8288148) remains in the preserved history. The final enhancement release is based on the owner’s README and roadmap commits through `2c16bcc`, with narrow updates for verified features and test results. Source, sanitized evidence and documentation are delivered to the existing `main` branch without force-pushing. The exact release SHA and its deployment checks are available in Git history. The recovery tag `crewcover-pre-enhancements-20261109` preserves the prior release. No secret or browser-session files are tracked.
 
 ## Practical limits
 
-One private event per organizer; no shared organizer team or volunteer login. Existing assignments are preserved unless explicitly cancelled. Profile qualifications are organizer-maintained data. Ranking is reproducible rather than globally optimal. No drag-and-drop was added.
+One private event per organizer; no shared organizer team or volunteer login. Existing assignments are preserved. A real cancellation records unavailability; vacancy-only drag fills do not cancel or transfer existing work. Atomic staffed-shift transfers are outside this release. Profile qualifications are organizer-maintained data. Ranking is reproducible rather than globally optimal.
 
-Optional scheduling gestures, additional animation, onboarding and visual refinements are explicitly on hold until the owner confirms that the required Clips recording and submission are secured.
+The owner authorized final hackathon enhancements after the initial release. The established architecture, schema, authentication secrets, Inter typography and existing Vercel/Neon resources are preserved. Decorative motion and atomic shift transfers were omitted to keep the release focused.
 
 Gemini narration can err; validated proposal records and schedule are authoritative. Provider quotas or request budgets can interrupt inference. Repair Center still works without AI. OpenRouter remains a manual alternative and was not certified as automatic fallback.
 
@@ -52,6 +52,25 @@ The exact timed 2–3 minute script and reset instructions are in [JUDGE_WALKTHR
 - [ ] Record the public Clips demonstration; no Remotion video is needed.
 - [ ] Open its share link in a private window without logging in; verify video and audio.
 - [ ] Add the verified Clips URL to README and the submission form.
-- [ ] Submit the app URL, repository and public recording through the organizer's current form before the supplied deadline: November 9, 2026, 11:59 PM Pacific.
+- [ ] Submit the app URL, repository and public recording through the organizer's current form before the supplied deadline: November 10, 2026, 08:59 WAT (November 9, 23:59 Pacific).
 
 The owner supplies the Clips recording and official submission-form URL. Neither is invented here.
+
+## Final enhancement scope
+
+- Public `/` explains staffing recovery, shows a labeled fictional preview, links into framework authentication, and answers qualifications, approval, privacy and demo questions. It calls no protected scheduling actions. SEO/social metadata and system-light/dark presentations are included.
+- Schedule supports reviewed drag-to-fill vacancies with dnd-kit, a visible preview, eligibility/forbidden-target feedback and existing accessible manual controls. Every confirmed fill calls the same authenticated `assign-volunteer` operation and revalidates on the server. No drag calls cancellation or moves existing assignments.
+- Repair Center shows real gap, recommendation, pending, unresolved and recovery counts, exact validation reasons, and access to eligible/excluded candidates.
+- Standalone chat identifies CrewCover, preserves event context, offers real example prompts through AgentKit, and links back to operations/schedule/repairs. Suggestions remain distinct from approved changes.
+- Production regression identified a stale browser snapshot after a successful profile save. Event Operations now explicitly fetches current event state on mount; direct protected readback confirmed the saved database value.
+- Known-good recovery tag: `crewcover-pre-enhancements-20261109` at `35321b5`. The owner's rewritten README commit `2ca107c` was fast-forwarded into main without discarding the ongoing application work.
+
+## Enhancement release validation
+
+Final enhanced production deployment: `dpl_BHbNvuXJwnECdDQmLLnZBPhP3ugv`, using the existing project and URL. TypeScript, Doctor, 21 domain/database tests and the official Vercel production build pass. All seven production Firefox cases pass in 3.2 minutes, including lower-row dragging with the agent panel open, invalid drops, explicit confirmation, persistence, focus return, emulated touch taps and responsive tab resizing. Security smoke rejects anonymous actions/chat (401), verifies protected operations/health (200), and confirms Neon application/auth schemas.
+
+The real Gemini proof passed as one complete run at revision 250 after a human-approved manual drag assignment. Coverage was 85% while the repair was pending and 100% after approval; the fresh tool read confirms saved 100% coverage. Sanitized proof, session-isolation results, accessibility and measured feedback contrast are in docs/evidence. Raw credentials, sessions, browser traces and provider data remain ignored and restricted.
+
+Physical-device swipes, complete screen-reader certification and automatic OpenRouter fallback remain unverified. The manual picker is the tested phone alternative. Atomic transfers between already-staffed shifts and elaborate decorative effects were skipped; dragging never represents a cancellation. No Remotion or separate generated video was created.
+
+The release is ready for the owner's genuine public Clips recording. Follow JUDGE_WALKTHROUGH.md, reset only your fictional event, record the real workflow, test the public share link signed out, then add that URL and submit. The recording and submission remain owner actions; no URL or submitted entry is fabricated.

@@ -131,3 +131,37 @@ describe("persistent domain and shared defineAction contract", () => {
     expect(coverage(state).percentage).toBe(90);
   });
 });
+
+it("persists confirmed vacancy fills through the shared action and rejects stale, duplicate and cross-owner writes", async () => {
+  const { default: assignAction } =
+    await import("../../actions/assign-volunteer");
+  const { id } = await seedDemo(owner, true);
+  await cancelAction.run(
+    { eventId: id, assignmentId: "a-1", reason: "Vacancy fill test" },
+    ctx,
+  );
+  await expect(
+    assignAction.run({ eventId: id, shiftId: "s-1", volunteerId: "v-2" }, ctx),
+  ).rejects.toThrow("Missing Registration");
+  await expect(
+    assignAction.run(
+      { eventId: id, shiftId: "s-1", volunteerId: "v-15" },
+      { caller: "http" },
+    ),
+  ).rejects.toThrow("Sign in");
+  await expect(
+    assignAction.run(
+      { eventId: id, shiftId: "s-1", volunteerId: "v-15" },
+      { caller: "http", userEmail: "other@example.test" },
+    ),
+  ).rejects.toThrow("not found");
+  await assignAction.run(
+    { eventId: id, shiftId: "s-1", volunteerId: "v-15" },
+    ctx,
+  );
+  expect(coverage(await readEvent(owner, id)).percentage).toBe(100);
+  await expect(
+    assignAction.run({ eventId: id, shiftId: "s-1", volunteerId: "v-15" }, ctx),
+  ).rejects.toThrow("fully covered");
+  expect((await readEvent(owner, id)).cancellations).toHaveLength(1);
+});

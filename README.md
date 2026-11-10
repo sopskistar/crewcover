@@ -8,7 +8,7 @@ Built with **[Builder.io Agent-Native](https://www.agent-native.com/)** for the 
 
 **[Explore CrewCover](https://crewcover-iota.vercel.app)** · **[Judge walkthrough](docs/JUDGE_WALKTHROUGH.md)** · **[Architecture](docs/ARCHITECTURE.md)** · **[Verified tests](docs/TESTING.md)**
 
-> **Demo access:** CrewCover currently uses authenticated organizer workspaces. Create an account or sign in, then choose **Open demo conference**. The conference, volunteers, and scenario are fictional; the scheduling operations and database changes are real.
+> **Demo access:** The public introduction explains the workflow with a labeled fictional preview. Choose **Get started**, create an account or sign in, then choose **Open demo conference** in your private workspace. The conference, volunteers, and scenario are fictional; the scheduling operations and database changes are real.
 >
 > **Clips demonstration:** A public recording link will be added once it has been recorded and verified.
 
@@ -117,20 +117,23 @@ The production verification also exercised a subsequent manual assignment, follo
 3. On **Schedule**, cancel the morning assignments for **Ada Okafor**, **Noah Patel**, and **Mia Chen**. Coverage falls to 85%.
 4. Ask the agent: *“Three volunteers have cancelled. Find qualified replacements without double-booking anyone. Generate a proposal, but do not approve it.”*
 5. Open **Repair Center**, inspect the reasons, then select **Review & approve → Approve & apply repair**.
-6. Confirm recovered coverage, refresh the page, and inspect **Activity**. Try a validated manual assignment and ask the agent to recheck coverage.
+6. Confirm recovered coverage, refresh the page, and inspect **Activity**. For a manual change, cancel Leo Mensah’s morning Guest assistance assignment, search for Sofia Park in the Schedule crew tray, drag her grip to that vacancy, review the checks, and choose **Approve assignment**. The uncovered-position picker remains available on phones and without dragging. Ask the agent to recheck coverage.
 
 **The volunteers and event are synthetic.** The action execution, constraints, persistence, approvals, and reported coverage are backed by the running application. See the **[timed Clips walkthrough](docs/JUDGE_WALKTHROUGH.md)**.
 
 ## Features in the verified release
 
+- Public introduction, labeled fictional schedule preview, workflow, FAQ and sign-in paths
 - Private organizer workspace and repeatable fictional event
 - Visual role-by-time schedule with live coverage and critical gaps
 - Volunteer directory with editable skills, availability, and hour limits
 - Confirmed cancellations and validated manual vacancy assignment
-- Ranked replacement recommendations, reasons, and unresolved gaps
+- Vacancy-only drag-and-drop with permitted/forbidden targets, review and explicit approval
+- Ranked replacement recommendations, eligible/excluded reasons, actual repair counts and unresolved gaps
 - Pending proposals with explicit approve/reject decisions
 - Persistent activity history and transaction-safe schedule changes
 - Context-aware Gemini agent using genuine Agent-Native actions
+- Specialized agent prompts, selected-event context and links back to schedule/repairs
 - Authentication, owner-scoped data access, and persisted inference budgets
 - Responsive interface, accessible controls, and reduced-motion support
 
@@ -185,8 +188,8 @@ The local PGlite commands keep production Neon data separate. This WSL environme
 
 The November 9, 2026 verification record reports:
 
-- **18 passing** scheduling/database tests
-- **3 passing** production Firefox browser tests
+- **21 passing** scheduling/database tests
+- **7 passing** production Firefox browser tests
 - Passing TypeScript, Agent-Native Doctor, and Nitro/Vercel production build
 - Real Gemini calls to coverage and repair actions, followed by human approval and a fresh post-change read
 - **Zero Axe violations** across the five tested workspace views and agent panel
@@ -197,7 +200,7 @@ The exact test scope, evidence, environment limitations, and security checks are
 
 ## Scope and limitations
 
-CrewCover is a hackathon MVP for **one private fictional event per organizer**. It does not yet provide team-wide organizer accounts, volunteer logins, availability confirmations, outbound messaging, or payroll. The verified release uses manual assignment controls; **drag-and-drop was not included in that release**. Repair ranking is reproducible rather than globally optimized, and organizer-entered qualifications are not externally certified.
+CrewCover is a hackathon MVP for **one private fictional event per organizer**. It does not yet provide team-wide organizer accounts, volunteer logins, availability confirmations, outbound messaging, or payroll. The verified release includes reviewed vacancy-only drag-and-drop and accessible manual controls. It does not transfer staffed assignments; a real cancellation records unavailability during that shift. Repair ranking is reproducible rather than globally optimized, and organizer-entered qualifications are not externally certified.
 
 Gemini can make explanatory mistakes; persisted proposals and deterministic validation remain authoritative. Provider quotas and inference budgets can temporarily interrupt chat, but Repair Center remains usable without AI. Automatic OpenRouter failover has not been verified.
 

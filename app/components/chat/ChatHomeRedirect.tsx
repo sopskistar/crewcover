@@ -1,11 +1,13 @@
 import { appPathFromLocalRoute } from "@agent-native/core/client/api-path";
 import { markAgentChatHomeHandoff } from "@agent-native/toolkit/app/chat/agentkit-chat/rail";
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router";
 
 import { getChatHomeThreadId } from "@/lib/chat-home-thread";
 import { chatThreadPath } from "@/lib/chat-paths";
 
 export default function ChatHomeRedirect() {
+  const { search } = useLocation();
   const [threadId] = useState(getChatHomeThreadId);
   const handoffStartedRef = useRef(false);
 
@@ -14,12 +16,14 @@ export default function ChatHomeRedirect() {
     handoffStartedRef.current = true;
     markAgentChatHomeHandoff("chat");
     try {
-      window.location.replace(appPathFromLocalRoute(chatThreadPath(threadId)));
+      window.location.replace(
+        appPathFromLocalRoute(chatThreadPath(threadId)) + search,
+      );
     } catch (error) {
       handoffStartedRef.current = false;
       throw error;
     }
-  }, [threadId]);
+  }, [threadId, search]);
 
   return null;
 }

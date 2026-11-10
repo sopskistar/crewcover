@@ -19,7 +19,7 @@ For custom branding, keep `server/plugins/agent-native-email-branding.ts` aligne
 
 ## Application state
 
-- `navigation` describes the view and selected ids. Chat is at `/chat`; `/` opens shared sign-in/signup.
+- `navigation` describes the view and selected ids. Chat is at `/chat`; `/` is a public, read-only introduction; `/sign-in` is the framework sign-in/signup screen.
 - Use `navigate` when supported and `view-screen` for a fresh read of visible details; basic navigation is already in `<current-screen>`.
 
 ## Development and verification
@@ -47,5 +47,7 @@ Use UTC ISO instants and half-open intervals; display the event time zone. Every
 | assign-volunteer            | validated manual assignment                               |
 | update-volunteer            | add/edit a profile; preserve existing assignment validity |
 | get-activity-history        | read recorded changes                                     |
+
+Schedule drag-and-drop stages a vacancy fill for explicit UI approval and calls the same `assign-volunteer` action. It never calls `cancel-assignment` to transfer a person. Chat includes the selected eventId in navigation and links back to the operations views. Public `/` uses `rootAuth: false`, exact `publicPaths`, and `AppProviders isPublicPath`; no scheduling actions are called there.
 
 `initialize-demo` is UI-only and resets only the organizer's synthetic event after confirmation. Never invent success or tool results. Gemini is primary; OpenRouter is a manual alternative. Inference has persisted request budgets; deterministic repairs remain available without inference.

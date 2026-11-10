@@ -189,6 +189,22 @@ export function exclusionReasons(
     reasons.push("Would exceed working-hour limit");
   return reasons;
 }
+/** Shared preview for manual vacancy fills. The server revalidates on write. */
+export function assignmentIssues(
+  state: EventState,
+  shiftId: string,
+  volunteerId: string,
+): string[] {
+  const shift = state.shifts.find((s) => s.id === shiftId);
+  const volunteer = state.volunteers.find((v) => v.id === volunteerId);
+  if (!shift || !volunteer) return ["Shift or volunteer not found"];
+  if (
+    activeAssignments(state).filter((a) => a.shiftId === shiftId).length >=
+    shift.required
+  )
+    return ["This shift is already fully covered"];
+  return exclusionReasons(state, volunteer, shift);
+}
 export function candidates(state: EventState, shiftId: string) {
   const shift = state.shifts.find((s) => s.id === shiftId);
   if (!shift) throw new SchedulingError("Shift not found.", "NOT_FOUND", 404);
@@ -208,6 +224,7 @@ export function candidates(state: EventState, shiftId: string) {
           "Available for the full shift",
           "No overlapping assignments",
           `${assignedHours(state, v.id) + hours(shift)} of ${v.maxHours} hour limit after assignment`,
+          "Ranked by fewer assigned hours, then stable volunteer id",
         ],
       });
   }

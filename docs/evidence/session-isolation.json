@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T21:48:46.593Z",
+  "url": "https://crewcover-iota.vercel.app",
+  "newOrganizerEvents": 0,
+  "foreignRead": 404,
+  "foreignWrite": 409,
+  "directHttpWriteGate": "approval-required",
+  "separateBrowserSession": true
+}

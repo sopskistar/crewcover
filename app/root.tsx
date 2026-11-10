@@ -36,8 +36,8 @@ import { TAB_ID } from "@/lib/tab-id";
 
 import { i18nCatalog } from "./i18n";
 
+import crewcoverStylesheet from "./crewcover.css?url";
 import stylesheet from "./global.css?url";
-import crewcoverStylesheet from './crewcover.css?url';
 
 configureTracking({
   getDefaultProps: (_name, properties) => ({
@@ -49,7 +49,7 @@ configureTracking({
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  { rel: 'stylesheet', href: crewcoverStylesheet },
+  { rel: "stylesheet", href: crewcoverStylesheet },
 ];
 
 const THEME_INIT_SCRIPT = getThemeInitScript();
@@ -182,15 +182,23 @@ export default function Root() {
   // The path, not the visitor, picks the shell, so the SSR shell stays one
   // cached page per URL.
   const { pathname } = useLocation();
+  const isPublicPath = pathname === "/";
   return (
     <AppToolkitProvider>
       <AppProviders
         queryClient={queryClient}
+        isPublicPath={isPublicPath}
         skeletonLayout={skeletonLayoutForPath(pathname)}
         i18n={{ catalog: i18nCatalog }}
       >
-        <DbSyncSetup />
-        <AppContent />
+        {isPublicPath ? (
+          <Outlet />
+        ) : (
+          <>
+            <DbSyncSetup />
+            <AppContent />
+          </>
+        )}
       </AppProviders>
     </AppToolkitProvider>
   );

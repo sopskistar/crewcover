@@ -17,5 +17,5 @@ FORM: Broadcast production call-sheet density, candidate 5 of seven grounded for
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Constraints and references
-No invented performance/adoption metrics; all conference data visibly synthetic. Preserve Agent-Native shell and chat behavior. No drag-and-drop dependency. Reduced motion must retain immediate status feedback.
+No invented performance/adoption metrics; all conference data visibly synthetic. Preserve Agent-Native shell and chat behavior. Vacancy-only drag fills stage organizer review and reuse assign-volunteer. Existing assignments cannot be moved by a cancellation gesture. Reduced motion must retain immediate status feedback.
 Research: https://21st.dev/community/components (navigation and dashboard categories); https://magicui.design/docs/components/animated-list (status-list motion only); https://60fps.design/ (state-transition references). Mobbin's web index requires login for useful examples; beUI was inaccessible. React Bits blur-text was examined and rejected for operational labels. No external component code copied.

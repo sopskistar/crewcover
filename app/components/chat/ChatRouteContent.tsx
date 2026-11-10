@@ -12,6 +12,7 @@ import {
   captureException,
   trackEvent,
 } from "@agent-native/core/client/analytics";
+import { useActionQuery } from "@agent-native/core/client/hooks";
 import { useT } from "@agent-native/core/client/i18n";
 import {
   useSetHeaderActions,
@@ -78,7 +79,13 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+  Link,
+} from "react-router";
 import { toast } from "sonner";
 
 import { useChatComposerMenuItems } from "@/components/ChatComposerContext";
@@ -337,89 +344,130 @@ function ChatThreadRouteContent({
   );
 
   return (
-    <div
-      className="relative flex h-full min-h-0 overflow-clip bg-background"
-      data-agent-chat-workspace-state={workspaceOpen ? "open" : "closed"}
-    >
+    <div className="flex h-full min-h-0 flex-col">
+      <ChatOperationsContext />
       <div
-        className={`agent-kit-chat-canvas-body min-w-0 flex-none ${
-          workspaceOpen ? "agent-kit-chat-canvas-body--workspace-open" : ""
-        }`}
+        className="relative flex min-h-0 flex-1 overflow-clip bg-background"
+        data-agent-chat-workspace-state={workspaceOpen ? "open" : "closed"}
       >
-        <CoreComposerRuntimeProvider>
-          <CoreAgentKitRoot
-            transport={transport}
-            clientOptions={{
-              transportOwnership: "owned",
-              retainActiveRunsOnThreadRelease: true,
-              onIntegrityReport: reportStreamIntegrity,
-            }}
-            threadId={resolvedThreadId}
-            labels={{
-              composerPlaceholder: t("chat.composerPlaceholder"),
-              continueRun: t("agentChat.common.continue"), // i18n-key-ignore shared framework catalog
-              continueRunUnavailable: t(
-                // i18n-key-ignore shared framework catalog
-                "agentChat.recovery.continueUnavailable",
-              ),
-            }}
-            slots={{
-              emptyState: ChatEmptyState,
-              message: ChatMessage,
-              messageSupplement: ChatMcpConnectionSuggestion,
-              runFailure: ChatRunFailure,
-              connectionRequest: ChatMcpConnectionRequest,
-              footer: ChatAgentFooter,
-            }}
-            onThreadForked={(thread) => navigate(chatThreadPath(thread.id))}
-          >
-            <ChatLifecycleTracking threadId={resolvedThreadId} />
-            <ChatInitialMessage
+        <div
+          className={`agent-kit-chat-canvas-body min-w-0 flex-none ${
+            workspaceOpen ? "agent-kit-chat-canvas-body--workspace-open" : ""
+          }`}
+        >
+          <CoreComposerRuntimeProvider>
+            <CoreAgentKitRoot
+              transport={transport}
+              clientOptions={{
+                transportOwnership: "owned",
+                retainActiveRunsOnThreadRelease: true,
+                onIntegrityReport: reportStreamIntegrity,
+              }}
               threadId={resolvedThreadId}
-              hasRestoredDraft={failedDraftForRoute !== null}
-              onFailure={handleInitialMessageFailure}
-              onAccepted={handleInitialMessageAccepted}
-            />
-            <ChatMcpConnectionResume />
-            <ChatCanvas
-              workspaceOpen={workspaceOpen}
-              setWorkspaceOpen={setWorkspaceOpen}
-              initialText={
-                failedDraftForRoute ? failedDraftForRoute.text : undefined
-              }
-              initialTextKey={
-                failedDraftForRoute
-                  ? `${resolvedThreadId}:${failedDraftForRoute.attempt}`
-                  : undefined
-              }
-              recoveryOptions={
-                failedDraftForRoute ? failedDraftForRoute.options : undefined
-              }
-              recoveryDraftUnsaved={failedDraftForRoute?.unsaved ?? false}
-              onRecoveryOptionsChange={(options) =>
-                updateFailedInitialDraft({ options })
-              }
-              onRecoveryDraftChange={updateFailedInitialDraft}
-              onRecoverySubmitAccepted={handleInitialMessageAccepted}
-            />
-          </CoreAgentKitRoot>
-        </CoreComposerRuntimeProvider>
+              labels={{
+                composerPlaceholder: t("chat.composerPlaceholder"),
+                continueRun: t("agentChat.common.continue"), // i18n-key-ignore shared framework catalog
+                continueRunUnavailable: t(
+                  // i18n-key-ignore shared framework catalog
+                  "agentChat.recovery.continueUnavailable",
+                ),
+              }}
+              slots={{
+                emptyState: ChatEmptyState,
+                message: ChatMessage,
+                messageSupplement: ChatMcpConnectionSuggestion,
+                runFailure: ChatRunFailure,
+                connectionRequest: ChatMcpConnectionRequest,
+                footer: ChatAgentFooter,
+              }}
+              onThreadForked={(thread) => navigate(chatThreadPath(thread.id))}
+            >
+              <ChatLifecycleTracking threadId={resolvedThreadId} />
+              <ChatInitialMessage
+                threadId={resolvedThreadId}
+                hasRestoredDraft={failedDraftForRoute !== null}
+                onFailure={handleInitialMessageFailure}
+                onAccepted={handleInitialMessageAccepted}
+              />
+              <ChatMcpConnectionResume />
+              <ChatCanvas
+                workspaceOpen={workspaceOpen}
+                setWorkspaceOpen={setWorkspaceOpen}
+                initialText={
+                  failedDraftForRoute ? failedDraftForRoute.text : undefined
+                }
+                initialTextKey={
+                  failedDraftForRoute
+                    ? `${resolvedThreadId}:${failedDraftForRoute.attempt}`
+                    : undefined
+                }
+                recoveryOptions={
+                  failedDraftForRoute ? failedDraftForRoute.options : undefined
+                }
+                recoveryDraftUnsaved={failedDraftForRoute?.unsaved ?? false}
+                onRecoveryOptionsChange={(options) =>
+                  updateFailedInitialDraft({ options })
+                }
+                onRecoveryDraftChange={updateFailedInitialDraft}
+                onRecoverySubmitAccepted={handleInitialMessageAccepted}
+              />
+            </CoreAgentKitRoot>
+          </CoreComposerRuntimeProvider>
+        </div>
+        <aside
+          data-agent-chat-workspace-panel=""
+          data-state={workspaceOpen ? "open" : "closed"}
+          aria-hidden={workspaceOpen ? undefined : true}
+          inert={workspaceOpen ? undefined : true}
+          className="agent-kit-workspace-panel absolute end-0 flex flex-col border-s border-border bg-background shadow-lg md:shadow-none"
+        >
+          <header className="agent-kit-workspace-panel__header flex shrink-0 items-center border-b border-border px-3">
+            <h2 className="min-w-0 truncate text-xs font-medium text-foreground">
+              {t("settings.workspaceTitle")}
+            </h2>
+          </header>
+          <div data-agent-chat-workspace-slot="" className="min-h-0 flex-1" />
+        </aside>
       </div>
-      <aside
-        data-agent-chat-workspace-panel=""
-        data-state={workspaceOpen ? "open" : "closed"}
-        aria-hidden={workspaceOpen ? undefined : true}
-        inert={workspaceOpen ? undefined : true}
-        className="agent-kit-workspace-panel absolute end-0 flex flex-col border-s border-border bg-background shadow-lg md:shadow-none"
-      >
-        <header className="agent-kit-workspace-panel__header flex shrink-0 items-center border-b border-border px-3">
-          <h2 className="min-w-0 truncate text-xs font-medium text-foreground">
-            {t("settings.workspaceTitle")}
-          </h2>
-        </header>
-        <div data-agent-chat-workspace-slot="" className="min-h-0 flex-1" />
-      </aside>
     </div>
+  );
+}
+
+function ChatOperationsContext() {
+  const [params, setParams] = useSearchParams();
+  const events = useActionQuery("list-events", {});
+  const selected =
+    events.data?.events.find((event) => event.id === params.get("eventId")) ??
+    events.data?.events[0];
+  useEffect(() => {
+    if (selected && params.get("eventId") !== selected.id)
+      setParams(
+        (current) => {
+          current.set("eventId", selected.id);
+          return current;
+        },
+        { replace: true },
+      );
+  }, [selected?.id, params, setParams]);
+  const suffix = selected ? `&eventId=${encodeURIComponent(selected.id)}` : "";
+  return (
+    <nav
+      className="cc-operations-assistant"
+      aria-label="CrewCover agent context"
+    >
+      <p>
+        <strong>CrewCover operations assistant</strong> ·{" "}
+        {selected?.name ?? "Your private event"}
+      </p>
+      <div className="cc-agent-context-links">
+        <Link to={`/operations?view=overview${suffix}`}>Event Operations</Link>
+        <Link to={`/operations?view=schedule${suffix}`}>Schedule</Link>
+        <Link to={`/operations?view=repairs${suffix}`}>Repair Center</Link>
+      </div>
+      <span className="cc-agent-approval-note">
+        Suggestions require review; approval saves changes.
+      </span>
+    </nav>
   );
 }
 
@@ -1190,10 +1238,41 @@ function ChatMcpConnectionSuggestion({
 }
 
 function ChatEmptyState() {
-  const t = useT();
+  const { threadId } = useAgentKit();
+  const control = useAgentKitControl(threadId);
   return (
-    <div className="agentkit-chat-empty-copy">
-      <h1>{t("chat.heroTitle")}</h1>
+    <div className="agentkit-chat-empty-copy cc-agent-intro">
+      <h1>Your CrewCover operations assistant</h1>
+      <p>
+        Inspect staffing gaps, find qualified replacements and explain conflicts
+        in your real schedule. Proposals need your approval before assignments
+        change.
+      </p>
+      <div className="cc-agent-prompts">
+        {[
+          "What staffing gaps need attention?",
+          "Find qualified replacements without double-booking anyone. Generate a proposal, but do not approve it.",
+          "Explain why the proposed volunteers are eligible.",
+          "What changed after my manual assignment? Read current coverage and activity.",
+        ].map((prompt) => (
+          <button
+            key={prompt}
+            onClick={() => {
+              void control
+                .sendMessage({ text: prompt })
+                .catch((error) =>
+                  toast.error(
+                    error instanceof Error
+                      ? error.message
+                      : "Unable to send. Try the composer below.",
+                  ),
+                );
+            }}
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

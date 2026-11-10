@@ -51,6 +51,8 @@ import {
   type Shift,
 } from "../../../shared/scheduling";
 import { CrewCoverMark } from "../CrewCoverMark";
+import Schedule from "./Schedule";
+import { useDialogFocusReturn } from "./use-dialog-focus-return";
 
 const views = [
   ["overview", "Overview"],
@@ -60,24 +62,6 @@ const views = [
   ["activity", "Activity"],
 ] as const;
 const errorToast = (error: Error) => toast.error(error.message);
-function useDialogFocusReturn() {
-  const origin = useRef<HTMLElement | null>(null);
-  return {
-    onOpenAutoFocus: () => {
-      origin.current =
-        document.activeElement instanceof HTMLElement
-          ? document.activeElement
-          : null;
-    },
-    onCloseAutoFocus: (event: Event) => {
-      event.preventDefault();
-      const target = origin.current?.isConnected
-        ? origin.current
-        : document.querySelector<HTMLElement>(".cc-tabs > button.is-active");
-      target?.focus();
-    },
-  };
-}
 const initials = (name: string) =>
   name
     .split(" ")
@@ -117,6 +101,7 @@ function utcInput(value: string, zone: string) {
 }
 
 export default function Operations() {
+  const tabsRef = useRef<HTMLElement>(null);
   const dialogFocus = useDialogFocusReturn();
   const [params, setParams] = useSearchParams(),
     view = params.get("view") ?? "overview";
@@ -135,8 +120,22 @@ export default function Operations() {
   const event = useActionQuery(
     "get-event-coverage",
     { eventId: eventId ?? "" },
-    { enabled: !!eventId },
+    { enabled: !!eventId, staleTime: 0, refetchOnMount: "always" },
   );
+  useEffect(() => {
+    const tabs = tabsRef.current;
+    if (!tabs) return;
+    const revealActiveTab = () =>
+      tabs.querySelector<HTMLElement>('[aria-current="page"]')?.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+        behavior: "instant",
+      });
+    revealActiveTab();
+    const observer = new ResizeObserver(revealActiveTab);
+    observer.observe(tabs);
+    return () => observer.disconnect();
+  }, [view, event.data?.state.id]);
   const initialize = useActionMutation("initialize-demo", {
     onError: errorToast,
   });
@@ -261,7 +260,7 @@ export default function Operations() {
           </Button>
         </div>
       </header>
-      <nav className="cc-tabs" aria-label="Event views">
+      <nav ref={tabsRef} className="cc-tabs" aria-label="Event views">
         {views.map(([id, label]) => (
           <button
             key={id}
@@ -395,7 +394,12 @@ export default function Operations() {
                 </button>
               ) : null}
             </div>
-            <Schedule state={s} onCancel={setCancel} onAssign={setAssign} />
+            <Schedule
+              state={s}
+              onCancel={setCancel}
+              onAssign={setAssign}
+              enableDrag={view === "schedule"}
+            />
             <div className="cc-ledger-legend">
               <span>
                 <i className="cc-dot good" />
@@ -590,99 +594,6 @@ export default function Operations() {
   );
 }
 
-function Schedule({
-  state: s,
-  onCancel,
-  onAssign,
-}: {
-  state: EventState;
-  onCancel: (a: Assignment) => void;
-  onAssign: (s: Shift) => void;
-}) {
-  const slots = [...new Set(s.shifts.map((x) => x.start))].sort();
-  const roles = [...new Set(s.shifts.map((x) => x.role))];
-  return (
-    <div
-      className="cc-ledger"
-      role="table"
-      aria-label="Volunteer staffing schedule"
-    >
-      <div className="cc-ledger-head" role="row">
-        <div role="columnheader">Role / location</div>
-        {slots.map((slot) => (
-          <div role="columnheader" key={slot}>
-            {time(slot, s.timeZone)}
-            <span>
-              {" to "}
-              {time(s.shifts.find((x) => x.start === slot)!.end, s.timeZone)}
-            </span>
-          </div>
-        ))}
-      </div>
-      {roles.map((role) => (
-        <div className="cc-ledger-row" role="row" key={role}>
-          <div className="cc-role" role="rowheader">
-            <strong>{role}</strong>
-            <span>{s.shifts.find((x) => x.role === role)!.area}</span>
-            {s.shifts.find((x) => x.role === role)!.priority === "critical" ? (
-              <small>Critical role</small>
-            ) : null}
-          </div>
-          {slots.map((slot) => {
-            const shift = s.shifts.find(
-              (x) => x.role === role && x.start === slot,
-            )!;
-            const assigned = s.assignments.filter(
-                (a) => a.shiftId === shift.id && a.status === "active",
-              ),
-              gap = Math.max(0, shift.required - assigned.length);
-            return (
-              <div
-                role="cell"
-                className={`cc-shift ${gap ? "has-gap" : ""}`}
-                key={slot}
-                data-testid={`shift-${shift.id}`}
-              >
-                <span className="cc-mobile-time">
-                  {time(shift.start, s.timeZone)} to{" "}
-                  {time(shift.end, s.timeZone)}
-                </span>
-                {assigned.map((a) => {
-                  const v = s.volunteers.find((v) => v.id === a.volunteerId)!;
-                  return (
-                    <div className="cc-assignee" key={a.id}>
-                      <span className="cc-avatar">{initials(v.name)}</span>
-                      <span>{v.name}</span>
-                      <button
-                        type="button"
-                        aria-label={`Cancel ${v.name} on ${shift.role}`}
-                        title="Cancel assignment"
-                        onClick={() => onCancel(a)}
-                      >
-                        <IconX size={14} />
-                      </button>
-                    </div>
-                  );
-                })}
-                {gap > 0 ? (
-                  <button
-                    className="cc-vacancy"
-                    onClick={() => onAssign(shift)}
-                  >
-                    <IconPlus size={15} />
-                    {gap} uncovered
-                    <IconChevronRight size={14} />
-                  </button>
-                ) : null}
-              </div>
-            );
-          })}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function RepairCenter({
   state: s,
   busy,
@@ -713,6 +624,21 @@ function RepairCenter({
       s.assignments.filter((a) => a.shiftId === x.id && a.status === "active")
         .length < x.required,
   );
+  const latestApproved = s.proposals
+    .filter((p) => p.status === "approved")
+    .slice(-1)[0];
+  const uncovered = gaps.reduce(
+    (sum, shift) =>
+      sum +
+      Math.max(
+        0,
+        shift.required -
+          s.assignments.filter(
+            (a) => a.status === "active" && a.shiftId === shift.id,
+          ).length,
+      ),
+    0,
+  );
   return (
     <section className="cc-repairs">
       <div className="cc-section-heading">
@@ -725,6 +651,42 @@ function RepairCenter({
           Ask agent
         </Button>
       </div>
+      <dl className="cc-recovery-facts" aria-label="Repair impact">
+        <div>
+          <dt>Uncovered positions</dt>
+          <dd>{uncovered}</dd>
+        </div>
+        <div>
+          <dt>Validated recommendations</dt>
+          <dd>{pending && !stale ? pending.recommendations.length : 0}</dd>
+        </div>
+        <div>
+          <dt>Awaiting approval</dt>
+          <dd>{pending && !stale ? pending.recommendations.length : 0}</dd>
+        </div>
+        <div>
+          <dt>Unresolved after proposed repair</dt>
+          <dd>
+            {pending && !stale
+              ? pending.unresolved.reduce((n, g) => n + g.count, 0)
+              : uncovered}
+          </dd>
+        </div>
+      </dl>
+      {latestApproved && (
+        <div className="cc-recovery-receipt" role="status">
+          <strong>
+            {latestApproved.recommendations.length} position
+            {latestApproved.recommendations.length === 1 ? "" : "s"} recovered
+            by the latest approved repair
+          </strong>
+          <p>
+            At approval: {latestApproved.before}% → {latestApproved.after}%.
+            Current coverage reflects any later manual changes. See Activity for
+            the recorded approval.
+          </p>
+        </div>
+      )}
       {!pending || stale ? (
         <div className="cc-repair-start">
           <IconShieldCheck size={32} />
@@ -822,6 +784,13 @@ function RepairCenter({
                       </li>
                     ))}
                   </ul>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => onAssign(shift)}
+                  >
+                    Inspect eligible and excluded candidates
+                  </Button>
                 </article>
               );
             })}
@@ -956,6 +925,9 @@ function AssignmentPicker({
                 <div className="cc-candidate" key={v.volunteerId}>
                   <div>
                     <strong>{v.name}</strong>
+                    <span className="cc-eligible-label">
+                      Eligible candidate
+                    </span>
                     <p>{v.reasons.join("; ")}</p>
                   </div>
                   <Button

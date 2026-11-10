@@ -204,13 +204,43 @@ try {
       .click();
     await expect(page.getByTestId("coverage-percentage")).toHaveText("95%");
     await page
-      .getByTestId("shift-s-4")
-      .getByRole("button", { name: /1 uncovered/ })
-      .click();
+      .getByRole("textbox", { name: "Find volunteer to assign" })
+      .fill("Sofia Park");
+    const source = page.getByRole("button", {
+      name: "Drag Sofia Park to a vacancy",
+      exact: true,
+    });
+    const target = page.getByTestId("shift-s-4");
+    await target.scrollIntoViewIfNeeded();
+    await source.scrollIntoViewIfNeeded();
+    const from = await source.boundingBox();
+    if (!from) throw new Error("Drag source unavailable");
+    await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(
+      from.x + from.width / 2 + 12,
+      from.y + from.height / 2,
+      { steps: 3 },
+    );
+    await expect(page.locator(".cc-drag-preview")).toBeVisible();
+    const to = await target.boundingBox();
+    if (!to) throw new Error("Drag target unavailable");
+    await page.mouse.move(to.x + to.width / 2, to.y + to.height / 2, {
+      steps: 15,
+    });
+    await expect(target).toHaveClass(/cc-drop-over/);
+    await page.screenshot({
+      path: ".impeccable/review/enhancements/drag-final-with-agent.png",
+      animations: "disabled",
+    });
+    await expect(target).toHaveClass(/cc-drop-over/);
+    await page.mouse.up();
+    await expect(page.getByRole("alertdialog").getByRole("heading")).toHaveText(
+      "Review manual assignment",
+    );
+    await expect(page.getByTestId("coverage-percentage")).toHaveText("95%");
     await page
-      .getByRole("dialog")
-      .getByRole("button", { name: "Assign", exact: true })
-      .first()
+      .getByRole("button", { name: "Approve assignment", exact: true })
       .click();
     await expect(page.getByTestId("coverage-percentage")).toHaveText("100%");
     await writeFile(
@@ -220,6 +250,7 @@ try {
           at: new Date().toISOString(),
           coverageAfterApproval: 100,
           manualAssignmentSaved: true,
+          manualAssignmentMethod: "drag-to-fill-vacancy",
         },
         null,
         2,
@@ -327,6 +358,7 @@ try {
         coverageBeforeHumanApproval: 85,
         coverageAfterApproval: 100,
         manualAssignmentSaved: true,
+        manualAssignmentMethod: "drag-to-fill-vacancy",
         freshAgentRead: fresh,
         resumedVerification: recheckOnly,
       },

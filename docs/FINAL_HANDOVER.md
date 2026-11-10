@@ -49,12 +49,12 @@ Telegram is intentionally **not** in the first notification phase; only one chan
 
 The exact timed 2–3 minute script and reset instructions are in [JUDGE_WALKTHROUGH.md](JUDGE_WALKTHROUGH.md). Before recording, sign in, reset your fictional event, and check that Gemini is available within the request budget. Record the actual app with Clips: full coverage, three cancellations, actual tool activity, inspect the pending repair, approve, refresh/history, make a manual change, and ask for a fresh coverage read.
 
-- [ ] Record the public Clips demonstration; no Remotion video is needed.
+- [x] Record the public Clips demonstration (the recorded screen capture has no voice-over).
 - [ ] Open its share link in a private window without logging in; verify video and audio.
-- [ ] Add the verified Clips URL to README and the submission form.
-- [ ] Submit the app URL, repository and public recording through the organizer's current form before the supplied deadline: November 10, 2026, 08:59 WAT (November 9, 23:59 Pacific).
+- [x] Add the Clips URL to the README and the submitted hackathon form.
+- [x] Submit the app URL, repository and public recording. The official submission page displayed “Your project submission has been received.”
 
-The owner supplies the Clips recording and official submission-form URL. Neither is invented here.
+Public submitted recording: https://clips.agent-native.com/share/r8pwtSENpdWH. Official form: https://www.builder.io/hackathon/submit.
 
 ## Final enhancement scope
 
@@ -73,7 +73,7 @@ The real Gemini proof passed as one complete run at revision 250 after a human-a
 
 Physical-device swipes, complete screen-reader certification and automatic OpenRouter fallback remain unverified. The manual picker is the tested phone alternative. Atomic transfers between already-staffed shifts and elaborate decorative effects were skipped; dragging never represents a cancellation. No Remotion or separate generated video was created.
 
-The release is ready for the owner's genuine public Clips recording. Follow JUDGE_WALKTHROUGH.md, reset only your fictional event, record the real workflow, test the public share link signed out, then add that URL and submit. The recording and submission remain owner actions; no URL or submitted entry is fabricated.
+The owner subsequently completed a public Clips recording and submitted the project through the official form; receipt was confirmed by the submission page. The original release instructions remain in JUDGE_WALKTHROUGH.md, and the recording has no microphone narration.
 
 ## Git-delivered release and post-push verification
 
